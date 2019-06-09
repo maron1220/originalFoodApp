@@ -26,6 +26,10 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         return cell
     }
     
+    var menuArray:[String] = ["療法食","体重管理","カロリー算出","給与量計算","決めて","ないよ"]
+    
+    var menuArrayNum:Int = 0
+    
     //tableviewが選択された場合の処理
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -53,12 +57,17 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
                 let nextView = storyboard.instantiateViewController(withIdentifier: "caliculateCalory") as! caliculateCaloryViewController
                 //画面遷移↓
                 self.present(nextView, animated: true, completion: nil)
-             
+            case 3:
+                //identiferを指定して遷移先を決める
+                let nextView = storyboard.instantiateViewController(withIdentifier: "foodValue") as! foodValueViewController
+                //画面遷移↓
+                self.present(nextView, animated: true, completion: nil)
             default:
                 return
             }
         }
         
+   
     
     
     @IBOutlet weak var menuTableView: UITableView!
@@ -76,9 +85,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    var menuArray:[String] = ["療法食","体重管理","カロリー算出","給与量計算","決めて","ないよ"]
     
-    var menuArrayNum:Int = 0
     
     
     //画面遷移のたびに呼び出す処理はここ↓
@@ -86,10 +93,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         //↓定型文
         super.viewWillAppear(animated)
     }
-    @IBAction func topButton(_ sender: Any) {
-        //画面を戻る
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     
     /*
     // MARK: - Navigation

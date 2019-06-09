@@ -15,6 +15,11 @@ class logFieldViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
+    var weightLogArray = [String]()
+    
+    
+    
     @IBAction func logReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "logWeight") as! logWeightViewController
@@ -27,10 +32,16 @@ class logFieldViewController: UIViewController {
     }
     
     @IBAction func logMemoryButton(_ sender: Any) {
+        
+       /*配列にテキストフィールドの値を入力する*/ weightLogArray.append("\(weightTextField.text!)kg")
+        /*UserDefaultsに記録を残す*/
+        UserDefaults.standard.set(weightLogArray, forKey: "add")
+        
         let storyboard:UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "logWeight") as! logWeightViewController
         self.present(nextView, animated: true, completion: nil)
     }
+    @IBOutlet weak var weightTextField: UITextField!
     
     /*
     // MARK: - Navigation
