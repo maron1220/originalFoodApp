@@ -76,7 +76,7 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
     }
     
-    var menuArray:[String] = ["療法食","体重管理","カロリー算出","まだ","決めて","ないよ"]
+    var menuArray:[String] = ["療法食","体重管理","カロリー算出","給与量計算","決めて","ないよ"]
     
     var menuArrayNum:Int = 0
     

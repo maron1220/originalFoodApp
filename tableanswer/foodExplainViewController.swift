@@ -1,28 +1,28 @@
 //
-//  logWeightViewController.swift
+//  foodExplainViewController.swift
 //  tableanswer
 //
-//  Created by 細川聖矢 on 2019/06/08.
+//  Created by 細川聖矢 on 2019/06/09.
 //  Copyright © 2019 Seiya. All rights reserved.
 //
 
 import UIKit
 
-class logWeightViewController: UIViewController {
+class foodExplainViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    @IBAction func weightReturnButton(_ sender: Any) {
+    @IBAction func labelReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+        let nextView = storyboard.instantiateViewController(withIdentifier: "petFood") as! petFoodViewController
         self.present(nextView, animated: true, completion: nil)
     }
-    @IBAction func logButton(_ sender: Any) {
+    @IBAction func labelMenuReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "logField") as! logFieldViewController
+        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
         self.present(nextView, animated: true, completion: nil)
     }
     
