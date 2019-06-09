@@ -24,6 +24,7 @@ class caliculateCaloryViewController: UIViewController {
     @IBOutlet weak var carboText: UITextField!
     
     @IBAction func calicuButton(_ sender: Any) {
+
         let Protein:String = proText.text!
         let Fat:String = fatText.text!
         let Carbo:String = carboText.text!
@@ -33,15 +34,17 @@ class caliculateCaloryViewController: UIViewController {
         let Sum = Pnum * 3.5 + Fnum * 8.5 + Cnum * 3.5
         answerLabel.text = String(Sum)
         //最後にキーボードを閉じる
-        carboText.endEditing(true)
+            carboText.endEditing(true)
     }
     
     @IBOutlet weak var answerLabel: UILabel!
-    @IBAction func CaloryReturnButton(_ sender: Any) {
+    @IBAction func caloryReturnMenuButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
         self.present(nextView, animated: true, completion: nil)
     }
+    
+    
     /*
     // MARK: - Navigation
 

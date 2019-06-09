@@ -16,7 +16,12 @@ class foodValueViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func valueReturnMenu(_ sender: Any) {
+        let storyboard:UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+        self.present(nextView, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 

@@ -15,8 +15,23 @@ class logFieldViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func logReturnButton(_ sender: Any) {
+        let storyboard:UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "logWeight") as! logWeightViewController
+        self.present(nextView, animated: true, completion: nil)
+    }
+    @IBAction func logMenuReturnButton(_ sender: Any) {
+        let storyboard:UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+        self.present(nextView, animated: true, completion: nil)
+    }
     
-
+    @IBAction func logMemoryButton(_ sender: Any) {
+        let storyboard:UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "logWeight") as! logWeightViewController
+        self.present(nextView, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
