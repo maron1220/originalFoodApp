@@ -13,11 +13,8 @@ import UIKit
 class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
     
     @IBOutlet weak var speciesTextField: UITextField!
-    
-    @IBAction func pushTextField(_ sender: Any) {
-    }
    
-    
+    var pickerUp = true
     
     //pickerviewに入れるための配列
     var animalSpeciesList = ["犬" , "猫"]
@@ -37,19 +34,36 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         speciesTextField.text = animalSpeciesList[row]
     }
     
+    //pickerviewの動きを決める
+    func pickerDo(){
+        if pickerUp{
+            
+        }else{
+            pickerButtomMargin.constant = pickerViewHeight.constant * -1
+        }
+    }
+    
     //ピッカービューの最初の表示
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return animalSpeciesList[row]
     }
     
-    
-    
     @IBOutlet weak var speciesPickerView: UIPickerView!
     
+    //ボタンを押したらpickerを呼び出す
+    @IBAction func inputButton(_ sender: Any) {
+        pickerButtomMargin.constant = 120
+    }
+    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        pickerDo()
+        
+        //pikerviewの初期位置を決める｡
+         pickerButtomMargin.constant = pickerViewHeight.constant * -1
         //Delegateの設定
         speciesPickerView.delegate = self
         speciesPickerView.dataSource = self
@@ -64,8 +78,10 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
         self.present(nextView, animated: true, completion: nil)
     }
+    @IBOutlet weak var pickerButtomMargin: NSLayoutConstraint!
     
-
+    @IBOutlet weak var pickerViewHeight: NSLayoutConstraint!
+    
     /*
     // MARK: - Navigation
 
