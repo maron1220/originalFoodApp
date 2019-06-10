@@ -29,9 +29,7 @@ class logWeightViewController: UIViewController,UITableViewDelegate,UITableViewD
     }
     
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
