@@ -114,37 +114,54 @@
                                     </navigationItem>
                                 </items>
                             </navigationBar>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="TNQ-7n-l9Y">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="jQY-b5-USb">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="jQY-b5-USb" id="3uI-6s-jae">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sSN-8l-qpe">
+                                <rect key="frame" x="0.0" y="532" width="414" height="210"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="210" id="Goh-LU-HWl"/>
+                                </constraints>
+                            </pickerView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jkv-im-Zuh">
+                                <rect key="frame" x="157" y="298" width="100" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="kKP-gv-i4m"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lz-aZ-NNI">
+                                <rect key="frame" x="191.5" y="378" width="31" height="30"/>
+                                <state key="normal" title="入力"/>
+                                <connections>
+                                    <action selector="inputButton:" destination="CLO-0z-hDc" eventType="touchUpInside" id="Jtm-ls-bvU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="jkv-im-Zuh" firstAttribute="centerX" secondItem="NjL-fh-Xnm" secondAttribute="centerX" id="2Gj-tQ-Szx"/>
+                            <constraint firstItem="3lz-aZ-NNI" firstAttribute="centerX" secondItem="NjL-fh-Xnm" secondAttribute="centerX" id="3fb-Kn-G4p"/>
                             <constraint firstItem="lEu-1G-1Us" firstAttribute="top" secondItem="lFQ-HZ-EYJ" secondAttribute="top" id="3pT-pO-n4e"/>
                             <constraint firstItem="lEu-1G-1Us" firstAttribute="trailing" secondItem="lFQ-HZ-EYJ" secondAttribute="trailing" id="5Ho-Tf-tYa"/>
-                            <constraint firstItem="TNQ-7n-l9Y" firstAttribute="leading" secondItem="lFQ-HZ-EYJ" secondAttribute="leading" id="S5j-JI-Hii"/>
-                            <constraint firstItem="lFQ-HZ-EYJ" firstAttribute="trailing" secondItem="TNQ-7n-l9Y" secondAttribute="trailing" id="aje-v2-62L"/>
-                            <constraint firstItem="TNQ-7n-l9Y" firstAttribute="top" secondItem="lEu-1G-1Us" secondAttribute="bottom" id="r9P-Rd-PE8"/>
+                            <constraint firstItem="3lz-aZ-NNI" firstAttribute="top" secondItem="jkv-im-Zuh" secondAttribute="bottom" constant="50" id="Hmv-Bw-GfI"/>
+                            <constraint firstItem="sSN-8l-qpe" firstAttribute="leading" secondItem="lFQ-HZ-EYJ" secondAttribute="leading" id="JQ3-Lw-V34"/>
+                            <constraint firstItem="jkv-im-Zuh" firstAttribute="top" secondItem="lEu-1G-1Us" secondAttribute="bottom" constant="210" id="h4f-KS-K1f"/>
                             <constraint firstItem="lEu-1G-1Us" firstAttribute="leading" secondItem="lFQ-HZ-EYJ" secondAttribute="leading" id="s9G-Jh-ccS"/>
-                            <constraint firstItem="lFQ-HZ-EYJ" firstAttribute="bottom" secondItem="TNQ-7n-l9Y" secondAttribute="bottom" id="tCW-Bf-iFf"/>
+                            <constraint firstItem="lFQ-HZ-EYJ" firstAttribute="bottom" secondItem="sSN-8l-qpe" secondAttribute="bottom" constant="120" id="uBm-pw-rV7"/>
+                            <constraint firstItem="sSN-8l-qpe" firstAttribute="trailing" secondItem="lFQ-HZ-EYJ" secondAttribute="trailing" id="ybc-eZ-5GS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="lFQ-HZ-EYJ"/>
                     </view>
+                    <connections>
+                        <outlet property="pickerButtomMargin" destination="uBm-pw-rV7" id="972-tn-Pz3"/>
+                        <outlet property="pickerViewHeight" destination="Goh-LU-HWl" id="Uxk-Lx-5oz"/>
+                        <outlet property="speciesPickerView" destination="sSN-8l-qpe" id="jvh-Ia-N3C"/>
+                        <outlet property="speciesTextField" destination="jkv-im-Zuh" id="gtX-bi-zoF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9c8-my-fd6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1427" y="-48"/>
+            <point key="canvasLocation" x="1426.0869565217392" y="-48.214285714285715"/>
         </scene>
         <!--foodExplain-->
         <scene sceneID="Pci-vS-wlg">

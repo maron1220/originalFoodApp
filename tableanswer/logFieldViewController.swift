@@ -9,6 +9,8 @@
 import UIKit
 
 class logFieldViewController: UIViewController {
+    
+    var weightLogArray = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,7 +18,7 @@ class logFieldViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    var weightLogArray = [String]()
+    
     
     
     
@@ -34,7 +36,7 @@ class logFieldViewController: UIViewController {
     @IBAction func logMemoryButton(_ sender: Any) {
         
        /*配列にテキストフィールドの値を入力する*/ weightLogArray.append("\(weightTextField.text!)kg")
-        /*UserDefaultsに記録を残す*/
+        /*UserDefaultsに記録を残す｡キー値はweightLogArray */
         UserDefaults.standard.set(weightLogArray, forKey: "add")
         
         let storyboard:UIStoryboard = self.storyboard!
