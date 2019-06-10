@@ -34,14 +34,14 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         speciesTextField.text = animalSpeciesList[row]
     }
     
-    //pickerviewの動きを決める
-    func pickerDo(){
-        if pickerUp{
-            
-        }else{
-            pickerButtomMargin.constant = pickerViewHeight.constant * -1
-        }
-    }
+//    //pickerviewの動きを決める
+//    func pickerDo(){
+//        if pickerUp{
+//
+//        }else{
+//            pickerButtomMargin.constant = pickerViewHeight.constant * -1
+//        }
+//    }
     
     //ピッカービューの最初の表示
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -53,14 +53,13 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     //ボタンを押したらpickerを呼び出す
     @IBAction func inputButton(_ sender: Any) {
         pickerButtomMargin.constant = 120
+        
+        //animationをつける
+        UIView.animate(withDuration: 0.5, animations:self.view.layoutIfNeeded)
     }
-    
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        pickerDo()
         
         //pikerviewの初期位置を決める｡
          pickerButtomMargin.constant = pickerViewHeight.constant * -1
@@ -68,7 +67,6 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         speciesPickerView.delegate = self
         speciesPickerView.dataSource = self
 
-        // Do any additional setup after loading the view.
     }
     
     
@@ -82,14 +80,4 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     @IBOutlet weak var pickerViewHeight: NSLayoutConstraint!
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
