@@ -12,7 +12,9 @@ import UIKit
 
 class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerViewDataSource {
     
-    @IBOutlet weak var speciesTextField: UITextField!
+    @IBOutlet weak var SpeciesNameLabel: UILabel!
+    @IBOutlet weak var foodNameLabel: UILabel!
+    
    
     var pickerUp = true
     
@@ -31,7 +33,7 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     //ピッカービューが選択されたときの挙動
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        speciesTextField.text = animalSpeciesList[row]
+        SpeciesNameLabel.text = animalSpeciesList[row]
     }
     
 //    //pickerviewの動きを決める
