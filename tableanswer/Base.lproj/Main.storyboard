@@ -196,7 +196,7 @@
         <!--foodExplain-->
         <scene sceneID="Pci-vS-wlg">
             <objects>
-                <viewController title="foodExplain" id="mT9-zf-wju" customClass="foodExplainViewController" customModule="tableanswer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="foodExplain" title="foodExplain" id="mT9-zf-wju" customClass="foodExplainViewController" customModule="tableanswer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="GwD-sZ-L5o">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -204,7 +204,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0o8-UF-pWA">
                                 <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                                 <items>
-                                    <navigationItem title="foodの説明" id="349-7k-u6k">
+                                    <navigationItem title="food一覧" id="349-7k-u6k">
                                         <barButtonItem key="leftBarButtonItem" title="療法食" id="lS9-t8-Dqz">
                                             <connections>
                                                 <action selector="labelReturnButton:" destination="mT9-zf-wju" id="Fi6-nC-gs3"/>
@@ -295,13 +295,32 @@
                     <view key="view" contentMode="scaleToFill" id="oAf-E3-iiC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gg3-h1-x6m">
+                                <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                                <items>
+                                    <navigationItem title="food詳細" id="U66-Te-46T">
+                                        <barButtonItem key="leftBarButtonItem" title="food一覧" id="nXC-mw-h4M">
+                                            <connections>
+                                                <action selector="explainReturnButton:" destination="wgp-bd-Yex" id="9DL-8q-Y8M"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Gg3-h1-x6m" firstAttribute="top" secondItem="x8S-dd-lTp" secondAttribute="top" id="0yb-eX-5KU"/>
+                            <constraint firstItem="Gg3-h1-x6m" firstAttribute="trailing" secondItem="x8S-dd-lTp" secondAttribute="trailing" id="3na-Y6-mYr"/>
+                            <constraint firstItem="Gg3-h1-x6m" firstAttribute="leading" secondItem="x8S-dd-lTp" secondAttribute="leading" id="NpL-OM-tbU"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="x8S-dd-lTp"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tlh-Qn-OeX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3200" y="-19"/>
+            <point key="canvasLocation" x="3162" y="-50"/>
         </scene>
         <!--Log Weight View Controller-->
         <scene sceneID="hEb-mk-2iX">

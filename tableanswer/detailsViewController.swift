@@ -16,7 +16,12 @@ class detailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func explainReturnButton(_ sender: Any) {
+        let storyboard:UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "foodExplain") as! foodExplainViewController
+        self.present(nextView, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
