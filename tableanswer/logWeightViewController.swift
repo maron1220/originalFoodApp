@@ -21,7 +21,7 @@ class logWeightViewController: UIViewController,UITableViewDelegate,UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         //セルに表示する内容
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell",for:indexPath)
+        let cell = logWeightTableView.dequeueReusableCell(withIdentifier: "Cell",for:indexPath)
         
         cell.textLabel?.text = resultArray[indexPath.row]
         
