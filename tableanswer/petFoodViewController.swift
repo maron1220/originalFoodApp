@@ -16,7 +16,6 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     @IBOutlet weak var foodNameLabel: UILabel!
     
    
-    var pickerUp = true
     
     //pickerviewに入れるための配列
     var animalSpeciesList = ["犬" , "猫"]
@@ -54,10 +53,11 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         switch component{
         case 0:
             aniSpi = animalSpeciesList[row]
-            aniSpiindex = animalSpeciesList.firstIndex(of:animalSpeciesList[row]) ?? 0
+            aniSpiindex = speciesPickerView.selectedRow(inComponent: 0)
             return SpeciesNameLabel.text = animalSpeciesList[row]
         case 1:
             fooNam = foodList[row]
+            //選択されたPickerの番号を取得
             fooNamindex = speciesPickerView.selectedRow(inComponent: 1)
             return foodNameLabel.text = foodList[row]
         default:
