@@ -50,19 +50,33 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         
         let cell = foodListTableView.dequeueReusableCell(withIdentifier: "ListCell",for:indexPath)
         
+        //switchの中でセルに表示する内容を決めるための関数
+        func showTextLabel(number:Int){
+            cell.textLabel?.text = foodlistArray[number][indexPath.row]
+        }
+            //switchの中でセルに表示する内容を決めるための関数｡猫｡
+        func showCatTextLabel(number:Int){
+                cell.textLabel?.text = catfoodlistArray[number][indexPath.row]
+            }
+        
+        
         if specieNumber == 0{
         switch foodNumber{
         case 0:
-            cell.textLabel?.text = foodlistArray[0][indexPath.row]
+            showTextLabel(number: 0)
+//            cell.textLabel?.text = foodlistArray[0][indexPath.row]
             
         case 1:
-            cell.textLabel?.text = foodlistArray[1][indexPath.row]
+            showTextLabel(number: 1)
+//            cell.textLabel?.text = foodlistArray[1][indexPath.row]
             
         case 2:
-            cell.textLabel?.text = foodlistArray[2][indexPath.row]
+            showTextLabel(number: 2)
+//            cell.textLabel?.text = foodlistArray[2][indexPath.row]
             
         case 3:
-            cell.textLabel?.text = foodlistArray[3][indexPath.row]
+            showTextLabel(number: 3)
+//            cell.textLabel?.text = foodlistArray[3][indexPath.row]
             
         default:
             break
@@ -70,16 +84,20 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         else if specieNumber == 1 {
             switch foodNumber{
             case 0:
-                cell.textLabel?.text = catfoodlistArray[0][indexPath.row]
+                showCatTextLabel(number: 0)
+//                cell.textLabel?.text = catfoodlistArray[0][indexPath.row]
                 
             case 1:
-                cell.textLabel?.text = catfoodlistArray[1][indexPath.row]
+                showCatTextLabel(number: 1)
+//                cell.textLabel?.text = catfoodlistArray[1][indexPath.row]
                 
             case 2:
-                cell.textLabel?.text = catfoodlistArray[2][indexPath.row]
+                showCatTextLabel(number: 2)
+//                cell.textLabel?.text = catfoodlistArray[2][indexPath.row]
                 
             case 3:
-                cell.textLabel?.text = catfoodlistArray[3][indexPath.row]
+                showCatTextLabel(number: 3)
+//                cell.textLabel?.text = catfoodlistArray[3][indexPath.row]
                 
             default:
                 break
@@ -91,16 +109,19 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     //cellがクリックされたときのイベント
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        <#code#>
-    }
+    //pageを遷移させる
+    //index.rowの値を次のページに送る
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        <#code#>
+//    }
 
     
     //遷移元ページから値を受け取る変数
     var sendSpecie = ""
     var sendFood = ""
     
-    //配列のインデックス番号を受け取る変数
+    //遷移元から配列のインデックス番号を受け取る変数
     var specieNumber:Int = 0
     var foodNumber:Int = 0
     
@@ -139,6 +160,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
         self.present(nextView, animated: true, completion: nil)
     }
+    
     
 
     /*
