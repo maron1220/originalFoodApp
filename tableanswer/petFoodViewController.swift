@@ -45,14 +45,20 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     var aniSpi = ""
     var fooNam = ""
     
+    //配列のインデックス番号を取得
+    var aniSpiindex:Int = 0
+    var fooNamindex:Int = 0
+    
     //ピッカービューが選択されたときの挙動
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component{
         case 0:
             aniSpi = animalSpeciesList[row]
+            aniSpiindex = animalSpeciesList.firstIndex(of:animalSpeciesList[row]) ?? 0
             return SpeciesNameLabel.text = animalSpeciesList[row]
         case 1:
             fooNam = foodList[row]
+            fooNamindex = speciesPickerView.selectedRow(inComponent: 1)
             return foodNameLabel.text = foodList[row]
         default:
             break
@@ -135,6 +141,8 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
             //遷移先ページの変数に値を入れる
             explainView.sendSpecie = aniSpi
             explainView.sendFood = fooNam
+            explainView.specieNumber = aniSpiindex
+            explainView.foodNumber = fooNamindex
         }
     }
     
