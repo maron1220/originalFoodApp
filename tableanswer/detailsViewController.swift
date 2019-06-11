@@ -12,9 +12,19 @@ class detailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        detailLabel.text = titleLabel
+        
     }
+    
+    //遷移元からのデータを受け取る
+    var titleLabel = ""
+    
+    
+    
+    @IBOutlet weak var detailLabel: UILabel!
+    
+    @IBOutlet weak var detailText: UITextView!
     
     @IBAction func explainReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!

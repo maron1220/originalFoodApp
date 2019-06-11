@@ -8,7 +8,7 @@
 
 import UIKit
 
-class foodExplainViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+class foodExplainViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //選んだPicker(の行数)によって表示内容を変える
@@ -107,18 +107,32 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         return cell
     }
+    //送る値を格納する箱
+    var detailName = "わからん！！"
     
     //cellがクリックされたときのイベント
     //pageを遷移させる
     //index.rowの値を次のページに送る
     
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    let storyboard:UIStoryboard = self.storyboard!
-    let nextView = storyboard.instantiateViewController(withIdentifier: "details") as! detailsViewController
-    self.present(nextView, animated: true, completion: nil)
+    
+    //ページ遷移
+//    let storyboard:UIStoryboard = self.storyboard!
+//    let nextView = storyboard.instantiateViewController(withIdentifier: "details") as! detailsViewController
+//    self.present(nextView, animated: true, completion: nil)
+    performSegue(withIdentifier: "detailSegue",sender: nil)
     }
 
     
+    
+    //画面遷移時に値を遷移先に送る
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "detailSegue"){
+            //遷移先ページをインスタンス化する
+            let detailsView : detailsViewController = segue.destination as! detailsViewController
+            detailsView.titleLabel = detailName
+        }
+    }
     //遷移元ページから値を受け取る変数
     var sendSpecie = ""
     var sendFood = ""
@@ -147,10 +161,6 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     
     @IBOutlet weak var chosenSpecie: UILabel!
     @IBOutlet weak var chosenFood: UILabel!
-    
-    
-    
-    
     
     @IBAction func labelReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
