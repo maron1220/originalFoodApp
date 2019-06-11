@@ -14,6 +14,7 @@
 		2D9B588A22AC695800BED199 /* logFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B588922AC695800BED199 /* logFieldViewController.swift */; };
 		2D9B58AC22AC947600BED199 /* foodExplainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B58AB22AC947600BED199 /* foodExplainViewController.swift */; };
 		2D9B58AE22AC957900BED199 /* foodValueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B58AD22AC957900BED199 /* foodValueViewController.swift */; };
+		2DC32A1C22AFD146005B0295 /* detailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC32A1B22AFD145005B0295 /* detailsViewController.swift */; };
 		2DD4623B22AB3D8700EB954F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4623A22AB3D8700EB954F /* AppDelegate.swift */; };
 		2DD4623D22AB3D8700EB954F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DD4623C22AB3D8700EB954F /* ViewController.swift */; };
 		2DD4624022AB3D8700EB954F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2DD4623E22AB3D8700EB954F /* Main.storyboard */; };
@@ -29,6 +30,7 @@
 		2D9B588922AC695800BED199 /* logFieldViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logFieldViewController.swift; sourceTree = "<group>"; };
 		2D9B58AB22AC947600BED199 /* foodExplainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodExplainViewController.swift; sourceTree = "<group>"; };
 		2D9B58AD22AC957900BED199 /* foodValueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = foodValueViewController.swift; sourceTree = "<group>"; };
+		2DC32A1B22AFD145005B0295 /* detailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = detailsViewController.swift; sourceTree = "<group>"; };
 		2DD4623722AB3D8700EB954F /* tableanswer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tableanswer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2DD4623A22AB3D8700EB954F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2DD4623C22AB3D8700EB954F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				2DD4623A22AB3D8700EB954F /* AppDelegate.swift */,
 				2DD4623C22AB3D8700EB954F /* ViewController.swift */,
 				2DD4623E22AB3D8700EB954F /* Main.storyboard */,
+				2DC32A1B22AFD145005B0295 /* detailsViewController.swift */,
 				2D9B58AD22AC957900BED199 /* foodValueViewController.swift */,
 				2D9B58AB22AC947600BED199 /* foodExplainViewController.swift */,
 				2D9B588922AC695800BED199 /* logFieldViewController.swift */,
@@ -161,6 +164,7 @@
 				2D9B58AC22AC947600BED199 /* foodExplainViewController.swift in Sources */,
 				2D9B588422ABF34200BED199 /* logWeightViewController.swift in Sources */,
 				2D9B588822ABFD4C00BED199 /* caliculateCaloryViewController.swift in Sources */,
+				2DC32A1C22AFD146005B0295 /* detailsViewController.swift in Sources */,
 				2D9B588A22AC695800BED199 /* logFieldViewController.swift in Sources */,
 				2D9B588022ABD9F700BED199 /* MenuViewController.swift in Sources */,
 				2DD4623B22AB3D8700EB954F /* AppDelegate.swift in Sources */,

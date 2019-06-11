@@ -112,9 +112,11 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     //pageを遷移させる
     //index.rowの値を次のページに送る
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
+   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    let storyboard:UIStoryboard = self.storyboard!
+    let nextView = storyboard.instantiateViewController(withIdentifier: "details") as! detailsViewController
+    self.present(nextView, animated: true, completion: nil)
+    }
 
     
     //遷移元ページから値を受け取る変数

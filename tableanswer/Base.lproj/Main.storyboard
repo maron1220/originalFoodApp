@@ -291,7 +291,7 @@
         <!--details-->
         <scene sceneID="PMg-VO-6e9">
             <objects>
-                <viewController title="details" id="wgp-bd-Yex" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="details" title="details" id="wgp-bd-Yex" customClass="detailsViewController" customModule="tableanswer" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="oAf-E3-iiC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
