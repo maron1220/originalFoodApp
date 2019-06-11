@@ -12,6 +12,8 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //選んだPicker(の行数)によって表示内容を変える
+        //犬と猫で場合分けしてから､フードを場合分けする
+        if specieNumber == 0 {
         switch foodNumber{
         case 0:
             return foodlistArray[0].count
@@ -23,13 +25,32 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             return foodlistArray[3].count
             default:
             return 0
+            }
+        } else if specieNumber == 1 {
+            switch foodNumber{
+            case 0:
+                return catfoodlistArray[0].count
+            case 1:
+                return catfoodlistArray[1].count
+            case 2:
+                return catfoodlistArray[2].count
+            case 3:
+                return catfoodlistArray[3].count
+            default:
+                return 0
+            }
         }
-        
-    }
+           else  {
+                return 0
+            }
+        }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = foodListTableView.dequeueReusableCell(withIdentifier: "ListCell",for:indexPath)
+        
+        if specieNumber == 0{
         switch foodNumber{
         case 0:
             cell.textLabel?.text = foodlistArray[0][indexPath.row]
@@ -45,8 +66,33 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             
         default:
             break
+            }}
+        else if specieNumber == 1 {
+            switch foodNumber{
+            case 0:
+                cell.textLabel?.text = catfoodlistArray[0][indexPath.row]
+                
+            case 1:
+                cell.textLabel?.text = catfoodlistArray[1][indexPath.row]
+                
+            case 2:
+                cell.textLabel?.text = catfoodlistArray[2][indexPath.row]
+                
+            case 3:
+                cell.textLabel?.text = catfoodlistArray[3][indexPath.row]
+                
+            default:
+                break
+            }}
+        else {
+            cell.textLabel?.text = ""
         }
         return cell
+    }
+    
+    //cellがクリックされたときのイベント
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        <#code#>
     }
 
     
@@ -60,6 +106,8 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     
     //foodlistを入れる配列
     var foodlistArray:[[String]] = [["犬腎臓用food1","腎臓用food2","腎臓用food3","腎臓用food4"],["犬心臓用food1","心臓用food2","心臓用food3"],["犬肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
+    
+    var catfoodlistArray:[[String]] = [["猫腎臓用food1","腎臓用food2","腎臓用food3","腎臓用food4"],["猫心臓用food1","心臓用food2","心臓用food3"],["猫肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["猫皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
