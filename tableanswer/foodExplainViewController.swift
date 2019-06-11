@@ -10,11 +10,26 @@ import UIKit
 
 class foodExplainViewController: UIViewController {
 
+    //遷移元ページから値を受け取る関数
+    
+    var sendSpecie = ""
+    var sendFood = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //遷移元の値をラベルに入れる
+        chosenSpecie.text = sendSpecie
+        chosenFood.text = sendFood
     }
+    
+    @IBOutlet weak var chosenSpecie: UILabel!
+    @IBOutlet weak var chosenFood: UILabel!
+    
+    
+    
+    
+    
     @IBAction func labelReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
         let nextView = storyboard.instantiateViewController(withIdentifier: "petFood") as! petFoodViewController

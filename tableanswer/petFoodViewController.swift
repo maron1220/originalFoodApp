@@ -20,7 +20,7 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     //pickerviewに入れるための配列
     var animalSpeciesList = ["犬" , "猫"]
-    var foodList = ["food1","food2","food3","food4"]
+    var foodList = ["腎臓用food","心臓用food","肝臓用food","皮膚用food"]
     
     //ピッカービューの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -41,12 +41,18 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         //componentは元々設定されている｡
     }
     
+    //ピッカービュー
+    var aniSpi = ""
+    var fooNam = ""
+    
     //ピッカービューが選択されたときの挙動
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch component{
         case 0:
+            aniSpi = animalSpeciesList[row]
             return SpeciesNameLabel.text = animalSpeciesList[row]
         case 1:
+            fooNam = foodList[row]
             return foodNameLabel.text = foodList[row]
         default:
             break
@@ -54,6 +60,8 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         
     }
     
+    
+   
 //    //pickerviewの動きを決める
 //    func pickerDo(){
 //        if pickerUp{
@@ -90,6 +98,12 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //rabelに初期値を入れておく
+        SpeciesNameLabel.text = animalSpeciesList[0]
+        foodNameLabel.text = foodList[0]
+        aniSpi = animalSpeciesList[0]
+        fooNam = foodList[0]
+        
         //pikerviewの初期位置を決める｡
          pickerButtomMargin.constant = pickerViewHeight.constant * -1
         //Delegateの設定
@@ -99,6 +113,9 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     }
     
     
+    @IBAction func searchButton(_ sender: Any) {
+        performSegue(withIdentifier: "sendSegue",sender: nil)
+    }
     
     @IBAction func foodReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
@@ -108,5 +125,17 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     @IBOutlet weak var pickerButtomMargin: NSLayoutConstraint!
     
     @IBOutlet weak var pickerViewHeight: NSLayoutConstraint!
+    
+    //画面遷移時に値を遷移先に送る
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if (segue.identifier == "sendSegue"){
+            //遷移先ページをインスタンス化する
+            let explainView : foodExplainViewController = segue.destination as! foodExplainViewController
+            
+            //遷移先ページの変数に値を入れる
+            explainView.sendSpecie = aniSpi
+            explainView.sendFood = fooNam
+        }
+    }
     
 }
