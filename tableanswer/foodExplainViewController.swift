@@ -51,6 +51,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         let cell = foodListTableView.dequeueReusableCell(withIdentifier: "ListCell",for:indexPath)
         
         //switchの中でセルに表示する内容を決めるための関数
+        //foodlistArray[number]でどの配列を使うか選び､[indexPath.row]で値を取り出す
         func showTextLabel(number:Int){
             cell.textLabel?.text = foodlistArray[number][indexPath.row]
         }
@@ -108,13 +109,53 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         return cell
     }
     //送る値を格納する箱
-    var detailName = "わからん！！"
+    var detailName = ""
     
     //cellがクリックされたときのイベント
     //pageを遷移させる
     //index.rowの値を次のページに送る
     
    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    
+    //ラベルに入っている数値によって遷移先に何のデータを渡すか場合分け｡
+    func choseCell(num:Int){
+        detailName = foodlistArray[num][indexPath.row]
+    }
+    
+    func choseCatCell(num:Int){
+        detailName = catfoodlistArray[num][indexPath.row]
+    }
+    
+    if specieNumber == 0{
+        switch foodNumber{
+        case 0:
+            choseCell(num: 0)
+        case 1:
+            choseCell(num: 1)
+        case 2:
+            choseCell(num: 2)
+        case 3:
+            choseCell(num: 3)
+        default:
+            detailName = "error"
+        }
+//        detailName = foodlistArray[0][indexPath.row]
+    }
+    else if specieNumber == 1{
+        switch foodNumber{
+        case 0:
+            choseCatCell(num: 0)
+        case 1:
+            choseCatCell(num: 1)
+        case 2:
+            choseCatCell(num: 2)
+        case 3:
+            choseCatCell(num: 3)
+        default:
+            detailName = "error"
+        }
+//        detailName = catfoodlistArray[0][indexPath.row]
+    }
     
     //ページ遷移
 //    let storyboard:UIStoryboard = self.storyboard!
