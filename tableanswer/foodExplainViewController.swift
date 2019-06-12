@@ -110,7 +110,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     //送る値を格納する箱
     var detailName = ""
-    
+    var detailNameNumber:Int = 0
     //cellがクリックされたときのイベント
     //pageを遷移させる
     //index.rowの値を次のページに送る
@@ -120,10 +120,12 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     //ラベルに入っている数値によって遷移先に何のデータを渡すか場合分け｡
     func choseCell(num:Int){
         detailName = foodlistArray[num][indexPath.row]
+        detailNameNumber = indexPath.row
     }
     
     func choseCatCell(num:Int){
         detailName = catfoodlistArray[num][indexPath.row]
+        detailNameNumber = indexPath.row
     }
     
     if specieNumber == 0{
@@ -172,6 +174,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             //遷移先ページをインスタンス化する
             let detailsView : detailsViewController = segue.destination as! detailsViewController
             detailsView.titleLabel = detailName
+            detailsView.titleNumber = detailNameNumber
+            detailsView.secondFoodNumber = foodNumber
+            detailsView.secondSpecieNumber = specieNumber
         }
     }
     //遷移元ページから値を受け取る変数
