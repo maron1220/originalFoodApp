@@ -15,7 +15,7 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     @IBOutlet weak var SpeciesNameLabel: UILabel!
     @IBOutlet weak var foodNameLabel: UILabel!
     
-   
+    
     
     //pickerviewに入れるための配列
     var animalSpeciesList = ["犬" , "猫"]
@@ -67,15 +67,15 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     }
     
     
-   
-//    //pickerviewの動きを決める
-//    func pickerDo(){
-//        if pickerUp{
-//
-//        }else{
-//            pickerButtomMargin.constant = pickerViewHeight.constant * -1
-//        }
-//    }
+    
+    //    //pickerviewの動きを決める
+    //    func pickerDo(){
+    //        if pickerUp{
+    //
+    //        }else{
+    //            pickerButtomMargin.constant = pickerViewHeight.constant * -1
+    //        }
+    //    }
     
     //ピッカービューの最初の表示
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -111,11 +111,11 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         fooNam = foodList[0]
         
         //pikerviewの初期位置を決める｡
-         pickerButtomMargin.constant = pickerViewHeight.constant * -1
+        pickerButtomMargin.constant = pickerViewHeight.constant * -1
         //Delegateの設定
         speciesPickerView.delegate = self
         speciesPickerView.dataSource = self
-
+        
     }
     
     
@@ -124,9 +124,10 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     }
     
     @IBAction func foodReturnButton(_ sender: Any) {
-        let storyboard:UIStoryboard = self.storyboard!
-        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
-        self.present(nextView, animated: true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
+//        let storyboard:UIStoryboard = self.storyboard!
+//        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+//        self.present(nextView, animated: true, completion: nil)
     }
     @IBOutlet weak var pickerButtomMargin: NSLayoutConstraint!
     

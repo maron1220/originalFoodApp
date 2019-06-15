@@ -41,41 +41,44 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
          //画面遷移↓
          self.present(nextView, animated: true, completion: nil)*/
         
-            let i:Int = indexPath.row
-            switch i {
-            case 0:
-                //identiferを指定して遷移先を決める
-                let nextView = storyboard.instantiateViewController(withIdentifier: "petFood") as! petFoodViewController
-                 self.present(nextView, animated: true, completion: nil)
-                
-            case 1:
-                //identiferを指定して遷移先を決める
-                let nextView = storyboard.instantiateViewController(withIdentifier: "logWeight") as! logWeightViewController
-                 self.present(nextView, animated: true, completion: nil)
-            case 2:
-                //identiferを指定して遷移先を決める
-                let nextView = storyboard.instantiateViewController(withIdentifier: "caliculateCalory") as! caliculateCaloryViewController
-                //画面遷移↓
-                self.present(nextView, animated: true, completion: nil)
-            case 3:
-                //identiferを指定して遷移先を決める
-                let nextView = storyboard.instantiateViewController(withIdentifier: "foodValue") as! foodValueViewController
-                //画面遷移↓
-                self.present(nextView, animated: true, completion: nil)
-            default:
-                return
-            }
+        let i:Int = indexPath.row
+        switch i {
+        case 0:
+            //identiferを指定して遷移先を決める
+            let nextView = storyboard.instantiateViewController(withIdentifier: "petFood") as! petFoodViewController
+            self.present(nextView, animated: true, completion: nil)
+            
+        case 1:
+            //identiferを指定して遷移先を決める
+            let nextView = storyboard.instantiateViewController(withIdentifier: "logWeight") as! logWeightViewController
+            self.present(nextView, animated: true, completion: nil)
+        case 2:
+            //identiferを指定して遷移先を決める
+            let nextView = storyboard.instantiateViewController(withIdentifier: "caliculateCalory") as! caliculateCaloryViewController
+            //画面遷移↓
+            self.present(nextView, animated: true, completion: nil)
+        case 3:
+            //identiferを指定して遷移先を決める
+            let nextView = storyboard.instantiateViewController(withIdentifier: "foodValue") as! foodValueViewController
+            //画面遷移↓
+            self.present(nextView, animated: true, completion: nil)
+        default:
+            return
         }
-        
-   
+    }
+    
+    
     
     
     @IBOutlet weak var menuTableView: UITableView!
     
-
+    @IBAction func returnTopButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         
         //↓tableviewを使わないからこの宣言が必要
@@ -96,13 +99,13 @@ class MenuViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
