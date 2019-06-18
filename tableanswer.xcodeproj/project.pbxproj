@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D58FACC22B8FF04000503EB /* explainTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D58FACB22B8FF04000503EB /* explainTableViewCell.swift */; };
 		2D9B588022ABD9F700BED199 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B587F22ABD9F700BED199 /* MenuViewController.swift */; };
 		2D9B588422ABF34200BED199 /* logWeightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B588322ABF34200BED199 /* logWeightViewController.swift */; };
 		2D9B588622ABFD1300BED199 /* petFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D9B588522ABFD1300BED199 /* petFoodViewController.swift */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D58FACB22B8FF04000503EB /* explainTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = explainTableViewCell.swift; sourceTree = "<group>"; };
 		2D9B587F22ABD9F700BED199 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2D9B588322ABF34200BED199 /* logWeightViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = logWeightViewController.swift; sourceTree = "<group>"; };
 		2D9B588522ABFD1300BED199 /* petFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = petFoodViewController.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 				2DD4623A22AB3D8700EB954F /* AppDelegate.swift */,
 				2DD4623C22AB3D8700EB954F /* ViewController.swift */,
 				2DD4623E22AB3D8700EB954F /* Main.storyboard */,
+				2D58FACB22B8FF04000503EB /* explainTableViewCell.swift */,
 				2DC32A1B22AFD145005B0295 /* detailsViewController.swift */,
 				2D9B58AD22AC957900BED199 /* foodValueViewController.swift */,
 				2D9B58AB22AC947600BED199 /* foodExplainViewController.swift */,
@@ -167,6 +170,7 @@
 				2DC32A1C22AFD146005B0295 /* detailsViewController.swift in Sources */,
 				2D9B588A22AC695800BED199 /* logFieldViewController.swift in Sources */,
 				2D9B588022ABD9F700BED199 /* MenuViewController.swift in Sources */,
+				2D58FACC22B8FF04000503EB /* explainTableViewCell.swift in Sources */,
 				2DD4623B22AB3D8700EB954F /* AppDelegate.swift in Sources */,
 				2D9B58AE22AC957900BED199 /* foodValueViewController.swift in Sources */,
 			);

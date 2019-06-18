@@ -16,14 +16,14 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     func labelBackground(){
         chosenSpecie.textColor = UIColor.white
         chosenFood.textColor = UIColor.white
-        switch foodNumber {
-        case 0:
-            speciesBackground = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
-            chosenFood.backgroundColor = UIColor.init(displayP3Red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
-        default:
-            chosenSpecie.backgroundColor = UIColor.white
-            chosenFood.backgroundColor = UIColor.white
-        }
+        //        switch foodNumber {
+        //        case 0:
+        //            speciesBackground = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+        //            chosenFood.backgroundColor = UIColor.init(displayP3Red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+        //        default:
+        //            chosenSpecie.backgroundColor = UIColor.white
+        //            chosenFood.backgroundColor = UIColor.white
+        //        }
         
     }
     
@@ -66,29 +66,38 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = foodListTableView.dequeueReusableCell(withIdentifier: "ListCell",for:indexPath)
+        //as以降でtableViewCellを呼び出す
+        let cell = foodListTableView.dequeueReusableCell(withIdentifier: "ListCell",for:indexPath) /*as! explainTableViewCell*/
+        
+        cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         //switchの中でセルに表示する内容を決めるための関数
         //foodlistArray[number]でどの配列を使うか選び､[indexPath.row]で値を取り出す
+        //cellLabelはexplainTableViewCellで定義している
         func showTextLabel(number:Int){
             cell.textLabel?.text = foodlistArray[number][indexPath.row]
-//            //文字色の変更
-//            cell.textLabel?.textColor = UIColor.white
+            //            //文字色の変更
+            //            cell.textLabel?.textColor = UIColor.white
         }
         //switchの中でセルに表示する内容を決めるための関数｡猫｡
         func showCatTextLabel(number:Int){
             cell.textLabel?.text = catfoodlistArray[number][indexPath.row]
-//            //文字色の変更
-//            cell.textLabel?.textColor = UIColor.white
+            //            //文字色の変更
+            //            cell.textLabel?.textColor = UIColor.white
         }
         
+        func kidney(){
+            //セルの文字色
+            cell.textLabel?.textColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+            //セルに入れる画像
+            cell.imageView?.image = UIImage(named:"kidney1")
+        }
         
         if specieNumber == 0{
             switch foodNumber{
             case 0:
                 showTextLabel(number: 0)
-                //セルの文字色
-                cell.textLabel?.textColor = UIColor(/*red: 194/255, green: 214/255, blue: 73/255, alpha: 1.0*/red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+                kidney()
                 
                 //            cell.textLabel?.text = foodlistArray[0][indexPath.row]
                 
@@ -111,8 +120,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             switch foodNumber{
             case 0:
                 showCatTextLabel(number: 0)
-                //                cell.textLabel?.text = catfoodlistArray[0][indexPath.row]
-                
+                kidney()
             case 1:
                 showCatTextLabel(number: 1)
                 //                cell.textLabel?.text = catfoodlistArray[1][indexPath.row]
@@ -141,7 +149,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     //index.rowの値を次のページに送る
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    //ラベルに入っている数値によって遷移先に何のデータを渡すか場合分け｡
+        //ラベルに入っている数値によって遷移先に何のデータを渡すか場合分け｡
         func choseCell(num:Int){
             detailName = foodlistArray[num][indexPath.row]
             detailNameNumber = indexPath.row
@@ -190,8 +198,6 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         performSegue(withIdentifier: "detailSegue",sender: nil)
     }
     
-    
-    
     //画面遷移時に値を遷移先に送る
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if (segue.identifier == "detailSegue"){
@@ -219,13 +225,21 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     //navigation barの背景色
     var navigationBarColor = UIColor.white
     
-    //navigation barの関数
+    //viewの背景色
+    var viewColor = UIColor.white
+    var topViewColor = UIColor.white
+    
+    //navigation barとviewの背景色の関数
     func navigationBar(){
         switch foodNumber {
         case 0:
             navigationBarColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+            viewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+            topViewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 0.7)
         default:
             navigationBarColor = UIColor.white
+            viewColor = UIColor.white
+            topViewColor = UIColor.white
         }
     }
     
@@ -237,13 +251,20 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //backButtonのテキストカラー
+        //setTitleColorを使う｡Outletを設定しておく｡
+        backButtonText.setTitleColor(UIColor.white, for: .normal)
         //背景色の関数
         labelBackground()
-        //ラベルの背景色
-        chosenSpecie.backgroundColor = speciesBackground
-        
         //navigation barの設定
         navigationBar()
+        
+        //ラベルの背景色
+        //        chosenSpecie.backgroundColor = speciesBackground
+        //viewの背景色
+        colorView.backgroundColor = viewColor
+        topColorView.backgroundColor = topViewColor
+        
         //backGrondColorじゃなくてbarTintColorにする
         foodNavigationBar.barTintColor = navigationBarColor
         //遷移元の値をラベルに入れる
@@ -274,9 +295,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     
     @IBAction func labelReturnButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-//        let storyboard:UIStoryboard = self.storyboard!
-//        let nextView = storyboard.instantiateViewController(withIdentifier: "petFood") as! petFoodViewController
-//        self.present(nextView, animated: true, completion: nil)
+        //        let storyboard:UIStoryboard = self.storyboard!
+        //        let nextView = storyboard.instantiateViewController(withIdentifier: "petFood") as! petFoodViewController
+        //        self.present(nextView, animated: true, completion: nil)
     }
     @IBAction func labelMenuReturnButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!
@@ -286,7 +307,13 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     
     @IBOutlet weak var foodNavigationBar: UINavigationBar!
     
+    @IBOutlet weak var colorView: UIView!
+    @IBOutlet weak var topColorView: UIView!
     
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    @IBOutlet weak var backButtonText: UIButton!
     /*
      // MARK: - Navigation
      
