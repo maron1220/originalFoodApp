@@ -60,10 +60,10 @@ class logWeightViewController: UIViewController,UITableViewDelegate,UITableViewD
     
     
     @IBAction func weightReturnButton(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-//        let storyboard:UIStoryboard = self.storyboard!
-//        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
-//        self.present(nextView, animated: true, completion: nil)
+        
+        let storyboard:UIStoryboard = self.storyboard!
+        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+        self.present(nextView, animated: true, completion: nil)
     }
     @IBAction func logButton(_ sender: Any) {
         let storyboard:UIStoryboard = self.storyboard!

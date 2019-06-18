@@ -157,36 +157,70 @@ class detailsViewController: UIViewController {
         }
     }
     
+//    func WhichImage(){
+//        if secondSpecieNumber == 0{
+//            switch titleNumber{
+//            case 0:
+//                image = UIImage(named: "maron0")
+//            case 1:
+//                image = UIImage(named: "maron1")
+//            case 2:
+//                image = UIImage(named: "maron0")
+//            case 3:
+//                image = UIImage(named: "maron1")
+//            default:
+//                image = UIImage(named: "")
+//            }
+//        }else if secondSpecieNumber == 1{
+//            switch titleNumber{
+//            case 0:
+//                image = UIImage(named: "maron0")
+//            case 1:
+//                image = UIImage(named: "maron1")
+//            case 2:
+//                image = UIImage(named: "maron0")
+//            case 3:
+//                image = UIImage(named: "maron1")
+//            default:
+//                image = UIImage(named: "")
+//            }
+//        }
+//
+//
+//    }
+    
     func WhichImage(){
         if secondSpecieNumber == 0{
             switch titleNumber{
             case 0:
-                image = UIImage(named: "maron0")
+                image = UIImage(named: "food\(secondFoodNumber)0")
             case 1:
-                image = UIImage(named: "maron1")
+                image = UIImage(named: "food\(secondFoodNumber)1")
             case 2:
-                image = UIImage(named: "maron0")
+                image = UIImage(named: "food\(secondFoodNumber)2")
             case 3:
-                image = UIImage(named: "maron1")
+                image = UIImage(named: "food\(secondFoodNumber)3")
             default:
                 image = UIImage(named: "")
             }
+            
         }else if secondSpecieNumber == 1{
             switch titleNumber{
             case 0:
-                image = UIImage(named: "maron0")
+                image = UIImage(named: "foodCat\(secondFoodNumber)0")
             case 1:
-                image = UIImage(named: "maron1")
+                image = UIImage(named: "foodCat\(secondFoodNumber)1")
             case 2:
-                image = UIImage(named: "maron0")
+                image = UIImage(named: "foodCat\(secondFoodNumber)2")
             case 3:
-                image = UIImage(named: "maron1")
+                image = UIImage(named: "foodCat\(secondFoodNumber)3")
             default:
                 image = UIImage(named: "")
-            }
+        }
+        
         }
     }
-    
+
     @IBOutlet weak var explain1Label: UILabel!
     
     @IBOutlet weak var explain2Label: UILabel!
@@ -215,3 +249,4 @@ class detailsViewController: UIViewController {
      */
     
 }
+

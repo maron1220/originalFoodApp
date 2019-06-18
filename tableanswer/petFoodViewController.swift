@@ -95,7 +95,7 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     //ボタンを押したらpickerを呼び出す
     @IBAction func inputButton(_ sender: Any) {
-        pickerButtomMargin.constant = 120
+        pickerButtomMargin.constant = 60
         
         //animationをつける
         UIView.animate(withDuration: 0.5, animations:self.view.layoutIfNeeded)
