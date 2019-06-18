@@ -10,6 +10,24 @@ import UIKit
 
 class foodExplainViewController: UIViewController,UITableViewDelegate,UITableViewDataSource{
     
+    
+    
+    //ラベルのバックグラウンドカラーを決める｡ついでに文字色も｡
+    func labelBackground(){
+        chosenSpecie.textColor = UIColor.white
+        chosenFood.textColor = UIColor.white
+        switch foodNumber {
+        case 0:
+            speciesBackground = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+            chosenFood.backgroundColor = UIColor.init(displayP3Red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+        default:
+            chosenSpecie.backgroundColor = UIColor.white
+            chosenFood.backgroundColor = UIColor.white
+        }
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //選んだPicker(の行数)によって表示内容を変える
         //犬と猫で場合分けしてから､フードを場合分けする
@@ -54,10 +72,14 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         //foodlistArray[number]でどの配列を使うか選び､[indexPath.row]で値を取り出す
         func showTextLabel(number:Int){
             cell.textLabel?.text = foodlistArray[number][indexPath.row]
+//            //文字色の変更
+//            cell.textLabel?.textColor = UIColor.white
         }
         //switchの中でセルに表示する内容を決めるための関数｡猫｡
         func showCatTextLabel(number:Int){
             cell.textLabel?.text = catfoodlistArray[number][indexPath.row]
+//            //文字色の変更
+//            cell.textLabel?.textColor = UIColor.white
         }
         
         
@@ -65,6 +87,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             switch foodNumber{
             case 0:
                 showTextLabel(number: 0)
+                //セルの文字色
+                cell.textLabel?.textColor = UIColor(/*red: 194/255, green: 214/255, blue: 73/255, alpha: 1.0*/red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+                
                 //            cell.textLabel?.text = foodlistArray[0][indexPath.row]
                 
             case 1:
@@ -116,8 +141,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     //index.rowの値を次のページに送る
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        //ラベルに入っている数値によって遷移先に何のデータを渡すか場合分け｡
+    //ラベルに入っている数値によって遷移先に何のデータを渡すか場合分け｡
         func choseCell(num:Int){
             detailName = foodlistArray[num][indexPath.row]
             detailNameNumber = indexPath.row
@@ -187,6 +211,24 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     var specieNumber:Int = 0
     var foodNumber:Int = 0
     
+    //ラベルの色の入れ物
+    var speciesBackground = UIColor.white
+    
+    //navigation barの色
+    var navigationBackgroundColor = UIColor.white
+    //navigation barの背景色
+    var navigationBarColor = UIColor.white
+    
+    //navigation barの関数
+    func navigationBar(){
+        switch foodNumber {
+        case 0:
+            navigationBarColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+        default:
+            navigationBarColor = UIColor.white
+        }
+    }
+    
     //foodlistを入れる配列
     var foodlistArray:[[String]] = [["犬腎臓用food1","腎臓用food2","腎臓用food3","腎臓用food4"],["犬心臓用food1","心臓用food2","心臓用food3"],["犬肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
@@ -195,9 +237,21 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //背景色の関数
+        labelBackground()
+        //ラベルの背景色
+        chosenSpecie.backgroundColor = speciesBackground
+        
+        //navigation barの設定
+        navigationBar()
+        //backGrondColorじゃなくてbarTintColorにする
+        foodNavigationBar.barTintColor = navigationBarColor
         //遷移元の値をラベルに入れる
         chosenSpecie.text = sendSpecie
         chosenFood.text = sendFood
+        
+        //tableviewの余計な部分を消す
+        foodListTableView.tableFooterView = UIView()
         
         //忘れてた↓
         foodListTableView.delegate = self
@@ -230,6 +284,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         self.present(nextView, animated: true, completion: nil)
     }
     
+    @IBOutlet weak var foodNavigationBar: UINavigationBar!
     
     
     /*
