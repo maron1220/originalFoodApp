@@ -25,6 +25,8 @@ class detailsViewController: UIViewController {
         
         foodImage.image = image
         
+        backButtonText.setTitleColor(UIColor.black, for: .normal)
+        
     }
     
     //写真を入れる配列
@@ -224,6 +226,15 @@ class detailsViewController: UIViewController {
     @IBOutlet weak var explain1Label: UILabel!
     
     @IBOutlet weak var explain2Label: UILabel!
+    
+    @IBOutlet weak var colorView: UIView!
+    
+    @IBOutlet weak var backButtonText: UIButton!
+    
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     
     
     @IBOutlet weak var detailLabel: UILabel!
