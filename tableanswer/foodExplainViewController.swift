@@ -65,11 +65,17 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         //as以降でtableViewCellを呼び出す
         let cell = foodListTableView.dequeueReusableCell(withIdentifier: "ListCell",for:indexPath) /*as! explainTableViewCell*/
         
+        //右端に矢印を出す
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        
+        //textのフォントサイズ
+        cell.textLabel!.font = UIFont.systemFont(ofSize: 30)
+        
+//        //imageのサイズ
+//        cell.imageView!.contentMode = .scaleAspectFit
         
         //switchの中でセルに表示する内容を決めるための関数
         //foodlistArray[number]でどの配列を使うか選び､[indexPath.row]で値を取り出す
@@ -90,7 +96,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             //セルの文字色
             cell.textLabel?.textColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
             //セルに入れる画像
-            cell.imageView?.image = UIImage(named:"kidney1")
+            cell.imageView?.image = UIImage(named:"kidney-50")
         }
         
         if specieNumber == 0{
@@ -253,7 +259,8 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         
         //backButtonのテキストカラー
         //setTitleColorを使う｡Outletを設定しておく｡
-        backButtonText.setTitleColor(UIColor.white, for: .normal)
+        backButtonText.setTitleColor(UIColor.black, for: .normal)
+        
         //背景色の関数
         labelBackground()
         //navigation barの設定
