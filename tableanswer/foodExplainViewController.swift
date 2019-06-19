@@ -72,7 +72,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         //textのフォントサイズ
-        cell.textLabel!.font = UIFont.systemFont(ofSize: 30)
+        cell.textLabel!.font = UIFont.systemFont(ofSize: 27)
         
 //        //imageのサイズ
 //        cell.imageView!.contentMode = .scaleAspectFit
@@ -94,9 +94,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         
         func kidney(){
             //セルの文字色
-            cell.textLabel?.textColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+//            cell.textLabel?.textColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
             //セルに入れる画像
-            cell.imageView?.image = UIImage(named:"kidney-50")
+            cell.imageView?.image = UIImage(named:"kidney-1")
         }
         
         if specieNumber == 0{
@@ -235,17 +235,38 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     var viewColor = UIColor.white
     var topViewColor = UIColor.white
     
+    //色の変数
+    var greenColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+    var liteGreenColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 0.7)
+    var whiteColor = UIColor.white
+    
+    //色決めをまとめた関数
+    func choiceColor(color:UIColor){
+        navigationBarColor = color
+        viewColor = color
+        
+    }
+    
+    //薄い色用
+    func secondChoiceColor(liteColor:UIColor){
+        topViewColor = liteColor
+    }
+    
     //navigation barとviewの背景色の関数
     func navigationBar(){
         switch foodNumber {
         case 0:
-            navigationBarColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
-            viewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
-            topViewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 0.7)
+            choiceColor(color: greenColor)
+            secondChoiceColor(liteColor:liteGreenColor )
+//            navigationBarColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+//            viewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+//            topViewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 0.7)
         default:
-            navigationBarColor = UIColor.white
-            viewColor = UIColor.white
-            topViewColor = UIColor.white
+            choiceColor(color: whiteColor)
+            secondChoiceColor(liteColor: whiteColor)
+//            navigationBarColor = UIColor.white
+//            viewColor = UIColor.white
+//            topViewColor = UIColor.white
         }
     }
     
@@ -269,7 +290,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         //ラベルの背景色
         //        chosenSpecie.backgroundColor = speciesBackground
         //viewの背景色
-        colorView.backgroundColor = viewColor
+        colorView.backgroundColor = UIColor.white
         topColorView.backgroundColor = topViewColor
         
         //backGrondColorじゃなくてbarTintColorにする
