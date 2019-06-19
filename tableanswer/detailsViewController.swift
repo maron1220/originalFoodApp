@@ -34,10 +34,10 @@ class detailsViewController: UIViewController {
         
         //navigationbarの色
         //backGrondColorじゃなくてbarTintColorにする
-        detailNavigationBar.barTintColor = navigationColor
+        detailNavigationBar.barTintColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)/*navigationColor*/
         
         //label1の色
-        detailLabel.backgroundColor = labelOneColor
+        detailLabel.backgroundColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)/*labelOneColor*/
         detailLabel.textColor = UIColor.white
         
         //labelのスタイル
