@@ -291,10 +291,10 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         //        chosenSpecie.backgroundColor = speciesBackground
         //viewの背景色
         colorView.backgroundColor = UIColor.white
-        topColorView.backgroundColor = topViewColor
+        topColorView.backgroundColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 0.8)/*topViewColor*/
         
         //backGrondColorじゃなくてbarTintColorにする
-        foodNavigationBar.barTintColor = navigationBarColor
+        foodNavigationBar.barTintColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)/*navigationBarColor*/
         //遷移元の値をラベルに入れる
         chosenSpecie.text = sendSpecie
         chosenFood.text = sendFood
