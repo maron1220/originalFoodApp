@@ -34,7 +34,7 @@ class detailsViewController: UIViewController {
         
         //navigationbarの色
         //backGrondColorじゃなくてbarTintColorにする
-        detailNavigationBar.barTintColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)/*navigationColor*/
+//        detailNavigationBar.barTintColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)/*navigationColor*/
         
         //label1の色
         detailLabel.backgroundColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)/*labelOneColor*/
@@ -47,12 +47,12 @@ class detailsViewController: UIViewController {
         
 //        detailLabel.layer.cornerRadius = 10.0
 //        detailLabel.clipsToBounds = true
-        detailLabel.layer.borderColor = UIColor.black.cgColor
-        detailLabel.layer.borderWidth = 0.5
-        
+//        detailLabel.layer.borderColor = UIColor.black.cgColor
+//        detailLabel.layer.borderWidth = 0.5
+//        
         //イメージビューのスタイル
-        foodImageView.layer.borderWidth = 0.5
-        foodImageView.layer.borderColor = UIColor.black.cgColor
+//        foodImageView.layer.borderWidth = 0.5
+//        foodImageView.layer.borderColor = UIColor.black.cgColor
 //        foodImageView.layer.cornerRadius = 10
 //        foodImageView.layer.masksToBounds = true
         

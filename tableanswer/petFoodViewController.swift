@@ -19,7 +19,7 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     //pickerviewに入れるための配列
     var animalSpeciesList = ["犬" , "猫"]
-    var foodList = ["腎臓用food","心臓用food","肝臓用food","皮膚用food"]
+    var foodList = ["腎臓用","心臓用","肝臓用","皮膚用"]
     
     //ピッカービューの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
@@ -78,27 +78,36 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     //    }
     
     //ピッカービューの最初の表示
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, attributedTitleForRow row: Int, forComponent component: Int) -> NSAttributedString? {
         
         switch component{
         case 0:
-            return animalSpeciesList[row]
+            let animalData = animalSpeciesList[row]
+            let animalTytle = NSAttributedString(string: animalData,attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+            return animalTytle/*animalSpeciesList[row]*/
         case 1:
-            return foodList[row]
+            let foodData = foodList[row]
+            let foodTytle = NSAttributedString(string: foodData,attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+            return foodTytle/*foodList[row]*/
         default:
-            return ""
+            return nil
         }
         
     }
+    
+    //    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+    //
+    //
+    //    }
     
     @IBOutlet weak var speciesPickerView: UIPickerView!
     
     //ボタンを押したらpickerを呼び出す
     @IBAction func inputButton(_ sender: Any) {
-        pickerButtomMargin.constant = 60
-        
-        //animationをつける
-        UIView.animate(withDuration: 0.5, animations:self.view.layoutIfNeeded)
+        //        pickerButtomMargin.constant = 60
+        //
+        //        //animationをつける
+        //        UIView.animate(withDuration: 0.5, animations:self.view.layoutIfNeeded)
     }
     
     override func viewDidLoad() {
@@ -111,13 +120,36 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         fooNam = foodList[0]
         
         //pikerviewの初期位置を決める｡
-        pickerButtomMargin.constant = pickerViewHeight.constant * -1
+        //        pickerButtomMargin.constant = pickerViewHeight.constant * -1
         //Delegateの設定
         speciesPickerView.delegate = self
         speciesPickerView.dataSource = self
         
+        //pickerの背景色
+        speciesPickerView.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+        
+        //ボタンの色
+        searchButtonLabel.setTitleColor(UIColor.black, for: UIControl.State.normal)
+//        searchButtonLabel.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+//        searchButtonLabel.layer.cornerRadius = 10.0
+        
+//        //navigation bar の色
+//        petFoodNavigationBar.barTintColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+        
+        topLabel.textColor = UIColor.white
+        topLabel.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+        
+//        labelView.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+//        
+//        SpeciesNameLabel.textColor = UIColor.white
+//        foodNameLabel.textColor = UIColor.white
     }
     
+    @IBOutlet weak var searchButtonLabel: UIButton!
+    
+    @IBOutlet weak var petFoodNavigationBar: UINavigationBar!
+    
+    @IBOutlet weak var labelView: UIView!
     
     @IBAction func searchButton(_ sender: Any) {
         performSegue(withIdentifier: "sendSegue",sender: nil)
@@ -125,13 +157,15 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     @IBAction func foodReturnButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
-//        let storyboard:UIStoryboard = self.storyboard!
-//        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
-//        self.present(nextView, animated: true, completion: nil)
+        //        let storyboard:UIStoryboard = self.storyboard!
+        //        let nextView = storyboard.instantiateViewController(withIdentifier: "Menu") as! MenuViewController
+        //        self.present(nextView, animated: true, completion: nil)
     }
     @IBOutlet weak var pickerButtomMargin: NSLayoutConstraint!
     
     @IBOutlet weak var pickerViewHeight: NSLayoutConstraint!
+    
+    @IBOutlet weak var topLabel: UILabel!
     
     //画面遷移時に値を遷移先に送る
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
