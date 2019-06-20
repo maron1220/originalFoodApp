@@ -16,13 +16,13 @@ class titleViewController: UIViewController {
         titleLabel.backgroundColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
         titleLabel.textColor = UIColor.white
         
-        buttonLabel.backgroundColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
-        buttonLabel.setTitleColor(UIColor.white, for: .normal)
-        //角丸のサイズ
-        buttonLabel.layer.cornerRadius = 10.0
-        //角丸にするときは必須
-        buttonLabel.clipsToBounds = true
-        
+//        buttonLabel.backgroundColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+        buttonLabel.setTitleColor(UIColor.black, for: .normal)
+//        //角丸のサイズ
+//        buttonLabel.layer.cornerRadius = 10.0
+//        //角丸にするときは必須
+//        buttonLabel.clipsToBounds = true
+//        
     }
     
     @IBOutlet weak var titleLabel: UILabel!
