@@ -83,11 +83,11 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         switch component{
         case 0:
             let animalData = animalSpeciesList[row]
-            let animalTytle = NSAttributedString(string: animalData,attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+            let animalTytle = NSAttributedString(string: animalData,attributes: [NSAttributedString.Key.foregroundColor:UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)])
             return animalTytle/*animalSpeciesList[row]*/
         case 1:
             let foodData = foodList[row]
-            let foodTytle = NSAttributedString(string: foodData,attributes: [NSAttributedString.Key.foregroundColor:UIColor.white])
+            let foodTytle = NSAttributedString(string: foodData,attributes: [NSAttributedString.Key.foregroundColor:UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)])
             return foodTytle/*foodList[row]*/
         default:
             return nil
@@ -126,7 +126,20 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
         speciesPickerView.dataSource = self
         
         //pickerの背景色
-        speciesPickerView.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+       speciesPickerView.backgroundColor = UIColor.white/*(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)*/
+        
+        SpeciesNameLabel.textColor = UIColor.white
+        foodNameLabel.textColor = UIColor.white
+        
+        
+        
+        backColorView.backgroundColor = UIColor.white/*(red: 234/255, green: 234/255, blue: 234/255, alpha: 0.5)*/
+        
+        labelView.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+        
+        leftLabel.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+        
+        
         
         //ボタンの色
         searchButtonLabel.setTitleColor(UIColor.black, for: UIControl.State.normal)
@@ -136,14 +149,17 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
 //        //navigation bar の色
 //        petFoodNavigationBar.barTintColor = UIColor.init(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
         
-        topLabel.textColor = UIColor.white
-        topLabel.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
+//        topLabel.textColor = UIColor.white
+//        topLabel.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
         
 //        labelView.backgroundColor = UIColor(red: 255/255, green: 85/255, blue: 32/255, alpha: 1.0)
 //        
 //        SpeciesNameLabel.textColor = UIColor.white
 //        foodNameLabel.textColor = UIColor.white
     }
+    
+    @IBOutlet weak var backgroundView: UIView!
+    
     
     @IBOutlet weak var searchButtonLabel: UIButton!
     
@@ -154,6 +170,14 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     @IBAction func searchButton(_ sender: Any) {
         performSegue(withIdentifier: "sendSegue",sender: nil)
     }
+    
+    @IBOutlet weak var backColorView: UIView!
+    
+    
+    
+    @IBOutlet weak var selectView: UIView!
+    
+    @IBOutlet weak var leftLabel: UIView!
     
     @IBAction func foodReturnButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
