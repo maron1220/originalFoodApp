@@ -96,7 +96,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             //セルの文字色
 //            cell.textLabel?.textColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
             //セルに入れる画像
-            cell.imageView?.image = UIImage(named:"kidney-1")
+            cell.imageView?.image = UIImage(named:"orange-food24")
         }
         
         if specieNumber == 0{
