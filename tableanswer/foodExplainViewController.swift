@@ -72,7 +72,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         //textのフォントサイズ
-        cell.textLabel!.font = UIFont.systemFont(ofSize: 27)
+        cell.textLabel!.font = UIFont.systemFont(ofSize: 24)
         
         //セルに出す画像
         cell.imageView?.image = UIImage(named:"orange-food24")
@@ -273,9 +273,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     //foodlistを入れる配列
-    var foodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート+低分子プロテイン","ユリナリーS/O","心臓サポート1+関節サポート","心臓サポート2","関節サポート","k/d","キドニーケア"],["pHコントロール スペシャル",    "pHコントロール ライト","pHコントロールV2+低分子プロテイン","pHコントロールV2+満腹感サポート",    "c/d","u/d","メタボリックス+ユリナリー","尿石ケア","ストラバイトケア"],["犬肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
+    var foodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート+低分子プロテイン","ユリナリーS/O","心臓サポート1+関節サポート","心臓サポート2","関節サポート","k/d","キドニーケア"],["pHコントロール スペシャル","pHコントロール ライト","pHコントロールV2+低分子プロテイン","pHコントロールV2+満腹感サポート",    "c/d","u/d","メタボリックス+ユリナリー","尿石ケア","ストラバイトケア"],["スキンサポート","低分子プロテイン","低分子プロテイン ライト","満腹感サポート+低分子プロテイン","アミノペプチドフォーミュラ","セレクトプロテイン(ダック&タピオカ)","セレクトプロテイン(フィッシュ&ポテト)","セレクトプロテイン(カンガルー&オーツ)","ダームディフェンス","d/d(サーモン&ポテト)","d/d(ダック&ポテト)","z/d(低アレルゲン)","z/d(ウルトラ)","アミノプロテクトケア"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
-    var catfoodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート スペシャル","ユリナリーS/O エイジング","腎臓ケア k/d ツナ チキン","キドニーケア"],["pHコントロール0","pHコントロール1","pHコントロール2","pHコントロール オルファクトリー","pHコントロール ライト","pHコントロール+満腹感サポート","pHコントロール+CLT","満腹感サポート+CLT"],["猫肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["猫皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
+    var catfoodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート スペシャル","ユリナリーS/O エイジング","腎臓ケア k/d ツナ チキン","キドニーケア"],["pHコントロール0","pHコントロール1","pHコントロール2","pHコントロール オルファクトリー","pHコントロール ライト","pHコントロール+満腹感サポート","pHコントロール+CLT","満腹感サポート+CLT"],["低分子プロテイン","セレクトプロテイン(ダック&ライス)","アミノペプチドフォーミュラ","z/d(低アレルゲン)"],["猫皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
