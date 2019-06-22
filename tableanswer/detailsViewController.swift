@@ -280,32 +280,34 @@ class detailsViewController: UIViewController {
     
     func WhichImage(){
         if secondSpecieNumber == 0{
-            switch titleNumber{
-            case 0:
-                image = UIImage(named: "ph")
-            case 1:
-                image = UIImage(named: "food\(secondFoodNumber)1")
-            case 2:
-                image = UIImage(named: "food\(secondFoodNumber)2")
-            case 3:
-                image = UIImage(named: "food\(secondFoodNumber)3")
-            default:
-                image = UIImage(named: "")
-            }
+            image = UIImage(named: "dogFood\(secondFoodNumber)\(titleNumber)")
+//            switch titleNumber{
+//            case 0:
+//                image = UIImage(named: "ph")
+//            case 1:
+//                image = UIImage(named: "food\(secondFoodNumber)1")
+//            case 2:
+//                image = UIImage(named: "food\(secondFoodNumber)2")
+//            case 3:
+//                image = UIImage(named: "food\(secondFoodNumber)3")
+//            default:
+//                image = UIImage(named: "")
+//            }
             
         }else if secondSpecieNumber == 1{
-            switch titleNumber{
-            case 0:
-                image = UIImage(named: "foodCat\(secondFoodNumber)0")
-            case 1:
-                image = UIImage(named: "foodCat\(secondFoodNumber)1")
-            case 2:
-                image = UIImage(named: "foodCat\(secondFoodNumber)2")
-            case 3:
-                image = UIImage(named: "foodCat\(secondFoodNumber)3")
-            default:
-                image = UIImage(named: "")
-        }
+            image = UIImage(named: "catFood\(secondFoodNumber)\(titleNumber)")
+//            switch titleNumber{
+//            case 0:
+//                image = UIImage(named: "foodCat\(secondFoodNumber)0")
+//            case 1:
+//                image = UIImage(named: "foodCat\(secondFoodNumber)1")
+//            case 2:
+//                image = UIImage(named: "foodCat\(secondFoodNumber)2")
+//            case 3:
+//                image = UIImage(named: "foodCat\(secondFoodNumber)3")
+//            default:
+//                image = UIImage(named: "")
+//        }
         
         }
     }
