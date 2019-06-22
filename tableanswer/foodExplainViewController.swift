@@ -74,6 +74,8 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         //textのフォントサイズ
         cell.textLabel!.font = UIFont.systemFont(ofSize: 27)
         
+        //セルに出す画像
+        cell.imageView?.image = UIImage(named:"orange-food24")
 //        //imageのサイズ
 //        cell.imageView!.contentMode = .scaleAspectFit
         
@@ -92,18 +94,18 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             //            cell.textLabel?.textColor = UIColor.white
         }
         
-        func kidney(){
-            //セルの文字色
-//            cell.textLabel?.textColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
-            //セルに入れる画像
-            cell.imageView?.image = UIImage(named:"orange-food24")
-        }
+//        func kidney(){
+//            //セルの文字色
+////            cell.textLabel?.textColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+//            //セルに入れる画像
+//            cell.imageView?.image = UIImage(named:"orange-food24")
+//        }
         
         if specieNumber == 0{
             switch foodNumber{
             case 0:
                 showTextLabel(number: 0)
-                kidney()
+//                kidney()
                 
                 //            cell.textLabel?.text = foodlistArray[0][indexPath.row]
                 
@@ -126,7 +128,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
             switch foodNumber{
             case 0:
                 showCatTextLabel(number: 0)
-                kidney()
+//                kidney()
             case 1:
                 showCatTextLabel(number: 1)
                 //                cell.textLabel?.text = catfoodlistArray[1][indexPath.row]
@@ -271,9 +273,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     //foodlistを入れる配列
-    var foodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート+低分子プロテイン","ユリナリーS/O","心臓サポート1","心臓サポート2","関節サポート","k/d","キドニーケア"],["犬心臓用food1","心臓用food2","心臓用food3"],["犬肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
+    var foodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート+低分子プロテイン","ユリナリーS/O","心臓サポート1+関節サポート","心臓サポート2","関節サポート","k/d","キドニーケア"],["pHコントロール スペシャル",    "pHコントロール ライト","pHコントロールV2+低分子プロテイン","pHコントロールV2+満腹感サポート",    "c/d","u/d","メタボリックス+ユリナリー","尿石ケア","ストラバイトケア"],["犬肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
-    var catfoodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート スペシャル","ユリナリーS/O エイジング","腎臓ケア k/d ツナ チキン","キドニーケア"],["猫心臓用food1","心臓用food2","心臓用food3"],["猫肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["猫皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
+    var catfoodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート スペシャル","ユリナリーS/O エイジング","腎臓ケア k/d ツナ チキン","キドニーケア"],["pHコントロール0","pHコントロール1","pHコントロール2","pHコントロール オルファクトリー","pHコントロール ライト","pHコントロール+満腹感サポート","pHコントロール+CLT","満腹感サポート+CLT"],["猫肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["猫皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
