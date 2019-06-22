@@ -66,21 +66,27 @@ class detailsViewController: UIViewController {
     var image = UIImage(named: "")
     
     //テキストフィールドに入れる値を配列にする
-    var textArray:[[String]] = [["犬腎臓1","腎臓2","腎臓3","腎臓4"],["犬心臓1","心臓2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
+    var textArray:[[String]] = [["慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理"],["犬心臓1","心臓2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
     var textCatArray:[[String]] = [["猫腎臓1","腎臓2","腎臓3","腎臓4"],["猫心臓1","心臓2","心臓3","心臓4"],["猫肝臓1","肝臓2","肝臓3","肝臓4"],["猫皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
-    var explain1Array:[[String]] = [["犬腎臓説明1","腎臓説明2","腎臓3","腎臓4"],["犬心臓説明1","心臓説明2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
+    //ラベル1の説明
+    var explain1Array:[[String]] = [["慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理"],["犬心臓説明1","心臓説明2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
-    var explainCat1Array:[[String]] = [["猫腎臓説明1","腎臓2","腎臓3","腎臓4"],["猫心臓1","心臓説明2","心臓3","心臓4"],["猫肝臓1","肝臓2","肝臓3","肝臓4"],["猫皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
+    //猫
+    var explainCat1Array:[[String]] = [["慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理","慢性腎臓病の管理"],["猫心臓1","心臓説明2","心臓3","心臓4"],["猫肝臓1","肝臓2","肝臓3","肝臓4"],["猫皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
-    var explain2Array:[[String]] = [["犬腎臓説明1-2","腎臓説明2","腎臓3","腎臓4"],["犬心臓説明1","心臓説明2-2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
+    //ラベル2の説明
+    var explain2Array:[[String]] = [["リンの含有量を制限","リンの含有量を制限","食物アレルギーにも配慮","blank","blank","blank","blank","リンの調整と低ナトリウム","リンの含有量を制限"],["犬心臓説明1","心臓説明2-2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
-    var explainCat2Array:[[String]] = [["猫腎臓説明1-2","腎臓2","腎臓3","腎臓4"],["猫心臓1","心臓説明2-2","心臓3","心臓4"],["猫肝臓1","肝臓2","肝臓3","肝臓4"],["猫皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
+    //猫
+    var explainCat2Array:[[String]] = [["リンの含有量を制限","リンの含有量を制限","リンの含有量を制限","blank","ツナとチキンの二種類の味","リンの含有量を制限"],["猫心臓1","心臓説明2-2","心臓3","心臓4"],["猫肝臓1","肝臓2","肝臓3","肝臓4"],["猫皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
-    var explain3Array:[[String]] = [["犬腎臓説明1-3","腎臓説明2","腎臓3","腎臓4"],["犬心臓説明1","心臓説明2-2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
+    //ラベル3の説明
+    var explain3Array:[[String]] = [["食欲刺激","食欲刺激","大豆タンパクを使用","blank","blank","blank","blank","筋肉の生成をサポート","国産フード"],["犬心臓説明1","心臓説明2-2","心臓3","心臓4"],["犬肝臓1","肝臓2","肝臓3","肝臓4"],["犬皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
-    var explainCat3Array:[[String]] = [["猫腎臓説明1-3","腎臓2","腎臓3","腎臓4"],["猫心臓1","心臓説明2-2","心臓3","心臓4"],["猫肝臓1","肝臓2","肝臓3","肝臓4"],["猫皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
+    //猫
+    var explainCat3Array:[[String]] = [["食欲刺激","高エネルギー","食欲刺激","blank","おいしさを追求","国産フード"],["猫心臓1","心臓説明2-2","心臓3","心臓4"],["猫肝臓1","肝臓2","肝臓3","肝臓4"],["猫皮膚1","皮膚2","皮膚3","皮膚4","皮膚5","皮膚6","皮膚7"]]
     
     //遷移元からのデータを受け取る
     var titleLabel = ""
@@ -132,53 +138,77 @@ class detailsViewController: UIViewController {
             }}
     }
     
+    //表示するラベルの場合分け
     func WhichExplain(){
         if secondSpecieNumber == 0{
-            switch titleNumber{
-            case 0:
-                label1 = explain1Array[secondFoodNumber][0]
-                label2 = explain2Array[secondFoodNumber][0]
-                label3 = explain3Array[secondFoodNumber][0]
-            case 1:
-                label1 = explain1Array[secondFoodNumber][1]
-                label2 = explain2Array[secondFoodNumber][1]
-                label3 = explain3Array[secondFoodNumber][1]
-            case 2:
-                label1 = explain1Array[secondFoodNumber][2]
-                label2 = explain2Array[secondFoodNumber][2]
-                label3 = explain3Array[secondFoodNumber][2]
-            case 3:
-                label1 = explain1Array[secondFoodNumber][3]
-                label2 = explain2Array[secondFoodNumber][3]
-                label3 = explain3Array[secondFoodNumber][3]
-            default:
-                label1 = ""
-                label2 = ""
-                label3 = ""
-            }
+            label1 = explain1Array[secondFoodNumber][titleNumber]
+            label2 = explain2Array[secondFoodNumber][titleNumber]
+            label3 = explain3Array[secondFoodNumber][titleNumber]
+            
+//            switch titleNumber{
+//            case 0:
+//                label1 = explain1Array[secondFoodNumber][0]
+//                label2 = explain2Array[secondFoodNumber][0]
+//                label3 = explain3Array[secondFoodNumber][0]
+//            case 1:
+//                label1 = explain1Array[secondFoodNumber][1]
+//                label2 = explain2Array[secondFoodNumber][1]
+//                label3 = explain3Array[secondFoodNumber][1]
+//            case 2:
+//                label1 = explain1Array[secondFoodNumber][2]
+//                label2 = explain2Array[secondFoodNumber][2]
+//                label3 = explain3Array[secondFoodNumber][2]
+//            case 3:
+//                label1 = explain1Array[secondFoodNumber][3]
+//                label2 = explain2Array[secondFoodNumber][3]
+//                label3 = explain3Array[secondFoodNumber][3]
+//            case 4:
+//                label1 = explain1Array[secondFoodNumber][4]
+//                label2 = explain2Array[secondFoodNumber][4]
+//                label3 = explain3Array[secondFoodNumber][4]
+//            case 5:
+//                label1 = explain1Array[secondFoodNumber][5]
+//                label2 = explain2Array[secondFoodNumber][5]
+//                label3 = explain3Array[secondFoodNumber][5]
+//            case 6:
+//                label1 = explain1Array[secondFoodNumber][6]
+//                label2 = explain2Array[secondFoodNumber][6]
+//                label3 = explain3Array[secondFoodNumber][6]
+//            case 7:
+//                label1 = explain1Array[secondFoodNumber][7]
+//                label2 = explain2Array[secondFoodNumber][7]
+//                label3 = explain3Array[secondFoodNumber][7]
+//            default:
+//                label1 = ""
+//                label2 = ""
+//                label3 = ""
+//            }
         }else if secondSpecieNumber == 1{
-            switch titleNumber{
-            case 0:
-                label1 = explainCat1Array[secondFoodNumber][0]
-                label2 = explainCat2Array[secondFoodNumber][0]
-                label3 = explainCat3Array[secondFoodNumber][0]
-            case 1:
-                label1 = explainCat1Array[secondFoodNumber][1]
-                label2 = explainCat2Array[secondFoodNumber][1]
-                label3 = explainCat3Array[secondFoodNumber][1]
-            case 2:
-                label1 = explainCat1Array[secondFoodNumber][2]
-                label2 = explainCat2Array[secondFoodNumber][2]
-                label3 = explainCat3Array[secondFoodNumber][2]
-            case 3:
-                label1 = explainCat1Array[secondFoodNumber][3]
-                label2 = explainCat2Array[secondFoodNumber][3]
-                label3 = explainCat3Array[secondFoodNumber][3]
-            default:
-                label1 = ""
-                label2 = ""
-                label3 = ""
-            }
+            label1 = explainCat1Array[secondFoodNumber][titleNumber]
+            label2 = explainCat2Array[secondFoodNumber][titleNumber]
+            label3 = explainCat3Array[secondFoodNumber][titleNumber]
+//            switch titleNumber{
+//            case 0:
+//                label1 = explainCat1Array[secondFoodNumber][0]
+//                label2 = explainCat2Array[secondFoodNumber][0]
+//                label3 = explainCat3Array[secondFoodNumber][0]
+//            case 1:
+//                label1 = explainCat1Array[secondFoodNumber][1]
+//                label2 = explainCat2Array[secondFoodNumber][1]
+//                label3 = explainCat3Array[secondFoodNumber][1]
+//            case 2:
+//                label1 = explainCat1Array[secondFoodNumber][2]
+//                label2 = explainCat2Array[secondFoodNumber][2]
+//                label3 = explainCat3Array[secondFoodNumber][2]
+//            case 3:
+//                label1 = explainCat1Array[secondFoodNumber][3]
+//                label2 = explainCat2Array[secondFoodNumber][3]
+//                label3 = explainCat3Array[secondFoodNumber][3]
+//            default:
+//                label1 = ""
+//                label2 = ""
+//                label3 = ""
+//            }
         }
     }
     

@@ -271,9 +271,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     //foodlistを入れる配列
-    var foodlistArray:[[String]] = [["犬腎臓用food1","腎臓用food2","腎臓用food3","腎臓用food4"],["犬心臓用food1","心臓用food2","心臓用food3"],["犬肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
+    var foodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート+低分子プロテイン","ユリナリーS/O","心臓サポート1","心臓サポート2","関節サポート","k/d","キドニーケア"],["犬心臓用food1","心臓用food2","心臓用food3"],["犬肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["犬皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
-    var catfoodlistArray:[[String]] = [["猫腎臓用food1","腎臓用food2","腎臓用food3","腎臓用food4"],["猫心臓用food1","心臓用food2","心臓用food3"],["猫肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["猫皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
+    var catfoodlistArray:[[String]] = [["腎臓サポート","腎臓サポート セレクション","腎臓サポート スペシャル","ユリナリーS/O エイジング","腎臓ケア k/d ツナ チキン","キドニーケア"],["猫心臓用food1","心臓用food2","心臓用food3"],["猫肝臓用food1","肝臓用food2","肝臓用food3","肝臓用food"],["猫皮膚用food1","皮膚用food2","皮膚用food3","皮膚用food4","皮膚用food5","皮膚用food6","皮膚用food7"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
