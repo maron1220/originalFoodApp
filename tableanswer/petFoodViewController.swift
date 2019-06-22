@@ -19,7 +19,7 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     //pickerviewに入れるための配列
     var animalSpeciesList = ["犬" , "猫"]
-    var foodList = ["腎臓用","心臓用","肝臓用","皮膚用"]
+    var foodList = ["腎臓用","膀胱･尿路","心臓用","肝臓用","皮膚用"]
     
     //ピッカービューの列の数
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
