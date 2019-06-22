@@ -331,7 +331,7 @@
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4w7-ux-noR">
-                                        <rect key="frame" x="60" y="5" width="63" height="48"/>
+                                        <rect key="frame" x="60" y="0.0" width="63" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -341,7 +341,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprints" translatesAutoresizingMaskIntoConstraints="NO" id="rCT-kP-kwB">
-                                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                        <rect key="frame" x="5" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="50" id="Lgy-n6-KaI"/>
                                             <constraint firstAttribute="height" constant="50" id="r50-zL-qij"/>
@@ -352,8 +352,8 @@
                                 <constraints>
                                     <constraint firstItem="rCT-kP-kwB" firstAttribute="leading" secondItem="i0S-Sx-Gum" secondAttribute="leading" constant="5" id="IAL-bI-jz4"/>
                                     <constraint firstAttribute="height" constant="50" id="Xvo-10-Hiy"/>
-                                    <constraint firstItem="rCT-kP-kwB" firstAttribute="top" secondItem="i0S-Sx-Gum" secondAttribute="top" constant="5" id="ddY-4W-J29"/>
-                                    <constraint firstItem="4w7-ux-noR" firstAttribute="top" secondItem="i0S-Sx-Gum" secondAttribute="top" constant="5" id="k36-i0-8eH"/>
+                                    <constraint firstItem="rCT-kP-kwB" firstAttribute="top" secondItem="i0S-Sx-Gum" secondAttribute="top" id="ddY-4W-J29"/>
+                                    <constraint firstItem="4w7-ux-noR" firstAttribute="top" secondItem="i0S-Sx-Gum" secondAttribute="top" id="k36-i0-8eH"/>
                                     <constraint firstItem="4w7-ux-noR" firstAttribute="leading" secondItem="i0S-Sx-Gum" secondAttribute="leading" constant="60" id="ng8-Sj-bfb"/>
                                 </constraints>
                             </view>
@@ -456,7 +456,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="xtp-4M-bkh"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -485,7 +485,7 @@
                                 <rect key="frame" x="0.0" y="812" width="414" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sLo-GW-qjg">
-                                        <rect key="frame" x="60" y="5" width="63" height="48"/>
+                                        <rect key="frame" x="60" y="0.0" width="63" height="48"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="back">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -496,7 +496,7 @@
                                         </connections>
                                     </button>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pawprints" translatesAutoresizingMaskIntoConstraints="NO" id="sUy-iG-Ze8">
-                                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                                        <rect key="frame" x="5" y="0.0" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Odj-WG-VpV"/>
                                             <constraint firstAttribute="width" constant="50" id="Wcb-vJ-Ji1"/>
@@ -506,10 +506,10 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Hnl-mp-GXa"/>
-                                    <constraint firstItem="sLo-GW-qjg" firstAttribute="top" secondItem="vl2-wl-KJW" secondAttribute="top" constant="5" id="Nm4-hL-ltc"/>
+                                    <constraint firstItem="sLo-GW-qjg" firstAttribute="top" secondItem="vl2-wl-KJW" secondAttribute="top" id="Nm4-hL-ltc"/>
                                     <constraint firstItem="sUy-iG-Ze8" firstAttribute="leading" secondItem="vl2-wl-KJW" secondAttribute="leading" constant="5" id="OFV-a0-Q7D"/>
                                     <constraint firstItem="sLo-GW-qjg" firstAttribute="leading" secondItem="vl2-wl-KJW" secondAttribute="leading" constant="60" id="X0K-DA-2F1"/>
-                                    <constraint firstItem="sUy-iG-Ze8" firstAttribute="top" secondItem="vl2-wl-KJW" secondAttribute="top" constant="5" id="puF-tK-tdF"/>
+                                    <constraint firstItem="sUy-iG-Ze8" firstAttribute="top" secondItem="vl2-wl-KJW" secondAttribute="top" id="puF-tK-tdF"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yr7-RT-U07">

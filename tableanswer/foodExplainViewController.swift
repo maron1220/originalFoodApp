@@ -32,34 +32,37 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         //選んだPicker(の行数)によって表示内容を変える
         //犬と猫で場合分けしてから､フードを場合分けする
         if specieNumber == 0 {
-            switch foodNumber{
-            case 0:
-                return foodlistArray[0].count
-            case 1:
-                return foodlistArray[1].count
-            case 2:
-                return foodlistArray[2].count
-            case 3:
-                return foodlistArray[3].count
-            default:
-                return 0
-            }
+            return foodlistArray[foodNumber].count
+//            switch foodNumber{
+//            case 0:
+//                return foodlistArray[0].count
+//            case 1:
+//                return foodlistArray[1].count
+//            case 2:
+//                return foodlistArray[2].count
+//            case 3:
+//                return foodlistArray[3].count
+//            default:
+//                return 0
+//            }
         } else if specieNumber == 1 {
-            switch foodNumber{
-            case 0:
-                return catfoodlistArray[0].count
-            case 1:
-                return catfoodlistArray[1].count
-            case 2:
-                return catfoodlistArray[2].count
-            case 3:
-                return catfoodlistArray[3].count
-            default:
-                return 0
-            }
+                return catfoodlistArray[foodNumber].count
         }
+//            switch foodNumber{
+//            case 0:
+//                return catfoodlistArray[0].count
+//            case 1:
+//                return catfoodlistArray[1].count
+//            case 2:
+//                return catfoodlistArray[2].count
+//            case 3:
+//                return catfoodlistArray[3].count
+//            default:
+//                return 0
+//            }
+        
         else  {
-            return 0
+            return 1
         }
     }
     
@@ -72,7 +75,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
         //textのフォントサイズ
-        cell.textLabel!.font = UIFont.systemFont(ofSize: 24)
+        cell.textLabel!.font = UIFont.systemFont(ofSize: 22)
         
         //セルに出す画像
         cell.imageView?.image = UIImage(named:"orange-food24")
@@ -102,49 +105,52 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
 //        }
         
         if specieNumber == 0{
-            switch foodNumber{
-            case 0:
-                showTextLabel(number: 0)
-//                kidney()
-                
-                //            cell.textLabel?.text = foodlistArray[0][indexPath.row]
-                
-            case 1:
-                showTextLabel(number: 1)
-                //            cell.textLabel?.text = foodlistArray[1][indexPath.row]
-                
-            case 2:
-                showTextLabel(number: 2)
-                //            cell.textLabel?.text = foodlistArray[2][indexPath.row]
-                
-            case 3:
-                showTextLabel(number: 3)
-                //            cell.textLabel?.text = foodlistArray[3][indexPath.row]
-                
-            default:
-                break
-            }}
-        else if specieNumber == 1 {
-            switch foodNumber{
-            case 0:
-                showCatTextLabel(number: 0)
-//                kidney()
-            case 1:
-                showCatTextLabel(number: 1)
-                //                cell.textLabel?.text = catfoodlistArray[1][indexPath.row]
-                
-            case 2:
-                showCatTextLabel(number: 2)
-                //                cell.textLabel?.text = catfoodlistArray[2][indexPath.row]
-                
-            case 3:
-                showCatTextLabel(number: 3)
-                //                cell.textLabel?.text = catfoodlistArray[3][indexPath.row]
-                
-            default:
-                break
-            }}
-        else {
+            showTextLabel(number: foodNumber)
+            
+//            switch foodNumber{
+//            case 0:
+//                showTextLabel(number: 0)
+////                kidney()
+//
+//                //            cell.textLabel?.text = foodlistArray[0][indexPath.row]
+//
+//            case 1:
+//                showTextLabel(number: 1)
+//                //            cell.textLabel?.text = foodlistArray[1][indexPath.row]
+//
+//            case 2:
+//                showTextLabel(number: 2)
+//                //            cell.textLabel?.text = foodlistArray[2][indexPath.row]
+//
+//            case 3:
+//                showTextLabel(number: 3)
+//                //            cell.textLabel?.text = foodlistArray[3][indexPath.row]
+//
+//            default:
+//                break
+//            }
+        }else if specieNumber == 1 {
+            showCatTextLabel(number: foodNumber)
+//            switch foodNumber{
+//            case 0:
+//                showCatTextLabel(number: 0)
+////                kidney()
+//            case 1:
+//                showCatTextLabel(number: 1)
+//                //                cell.textLabel?.text = catfoodlistArray[1][indexPath.row]
+//
+//            case 2:
+//                showCatTextLabel(number: 2)
+//                //                cell.textLabel?.text = catfoodlistArray[2][indexPath.row]
+//
+//            case 3:
+//                showCatTextLabel(number: 3)
+//                //                cell.textLabel?.text = catfoodlistArray[3][indexPath.row]
+//
+//            default:
+//                break
+//            }
+        }else {
             cell.textLabel?.text = ""
         }
         return cell
@@ -169,33 +175,35 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         }
         
         if specieNumber == 0{
-            switch foodNumber{
-            case 0:
-                choseCell(num: 0)
-            case 1:
-                choseCell(num: 1)
-            case 2:
-                choseCell(num: 2)
-            case 3:
-                choseCell(num: 3)
-            default:
-                detailName = "error"
-            }
+            choseCell(num: foodNumber)
+//            switch foodNumber{
+//            case 0:
+//                choseCell(num: 0)
+//            case 1:
+//                choseCell(num: 1)
+//            case 2:
+//                choseCell(num: 2)
+//            case 3:
+//                choseCell(num: 3)
+//            default:
+//                detailName = "error"
+//            }
             //        detailName = foodlistArray[0][indexPath.row]
         }
         else if specieNumber == 1{
-            switch foodNumber{
-            case 0:
-                choseCatCell(num: 0)
-            case 1:
-                choseCatCell(num: 1)
-            case 2:
-                choseCatCell(num: 2)
-            case 3:
-                choseCatCell(num: 3)
-            default:
-                detailName = "error"
-            }
+            choseCatCell(num: foodNumber)
+//            switch foodNumber{
+//            case 0:
+//                choseCatCell(num: 0)
+//            case 1:
+//                choseCatCell(num: 1)
+//            case 2:
+//                choseCatCell(num: 2)
+//            case 3:
+//                choseCatCell(num: 3)
+//            default:
+//                detailName = "error"
+//            }
             //        detailName = catfoodlistArray[0][indexPath.row]
         }
         
@@ -255,29 +263,29 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     //navigation barとviewの背景色の関数
-    func navigationBar(){
-        switch foodNumber {
-        case 0:
-            choiceColor(color: greenColor)
-            secondChoiceColor(liteColor:liteGreenColor )
-//            navigationBarColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
-//            viewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
-//            topViewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 0.7)
-        default:
-            choiceColor(color: whiteColor)
-            secondChoiceColor(liteColor: whiteColor)
-//            navigationBarColor = UIColor.white
-//            viewColor = UIColor.white
-//            topViewColor = UIColor.white
-        }
-    }
-    
+//    func navigationBar(){
+//        switch foodNumber {
+//        case 0:
+//            choiceColor(color: greenColor)
+//            secondChoiceColor(liteColor:liteGreenColor )
+////            navigationBarColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+////            viewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 1.0)
+////            topViewColor = UIColor(red: 89/255, green: 211/255, blue: 102/255, alpha: 0.7)
+//        default:
+//            choiceColor(color: whiteColor)
+//            secondChoiceColor(liteColor: whiteColor)
+////            navigationBarColor = UIColor.white
+////            viewColor = UIColor.white
+////            topViewColor = UIColor.white
+//        }
+//    }
+//
     //foodlistを入れる配列
     //犬
-    var foodlistArray:[[String]] = [/*腎臓*/["腎臓サポート","腎臓サポート セレクション","腎臓サポート+低分子プロテイン","ユリナリーS/O","心臓サポート1+関節サポート","心臓サポート2","関節サポート","k/d","キドニーケア"],/*膀胱･尿路*/["pHコントロール","pHコントロール スペシャル","pHコントロール ライト","pHコントロールV2+低分子プロテイン","pHコントロールV2+満腹感サポート","満腹感サポートスペシャル+CLT","c/d","u/d","メタボリックス+ユリナリー","尿石ケア","ストラバイトケア"],/*皮膚*/["スキンサポート","低分子プロテイン","低分子プロテイン ライト","満腹感サポート+低分子プロテイン","アミノペプチドフォーミュラ","セレクトプロテイン(ダック&タピオカ)","セレクトプロテイン(フィッシュ&ポテト)","セレクトプロテイン(カンガルー&オーツ)","ダームディフェンス","d/d(サーモン&ポテト)","d/d(ダック&ポテト)","z/d(低アレルゲン)","z/d(ウルトラ)","アミノプロテクトケア"],/*消化器*/["消化器サポート(低脂肪)","消化器サポート(高繊維)","消化器サポート(高栄養)","i/d(コンフォート)","i/d(ローファット)"]]
+    var foodlistArray:[[String]] = [/*腎臓*/["腎臓サポート","腎臓サポート セレクション","腎臓サポート+低分子プロテイン","心臓サポート1+関節サポート","心臓サポート2","k/d","キドニーケア"],/*膀胱･尿路*/["pHコントロール","pHコントロール スペシャル","pHコントロール ライト","pHコントロールV2+低分子プロテイン","pHコントロールV2+満腹感サポート","満腹感サポートスペシャル+CLT","c/d","u/d","メタボリックス+ユリナリー","尿石ケア","ストラバイトケア"],/*皮膚*/["スキンサポート","低分子プロテイン","低分子プロテイン ライト","満腹感サポート+低分子プロテイン","アミノペプチドフォーミュラ","セレクトプロテイン(ダック&タピオカ)","セレクトプロテイン(フィッシュ&ポテト)","セレクトプロテイン(カンガルー&オーツ)","ダームディフェンス","d/d(サーモン&ポテト)","d/d(ダック&ポテト)","z/d(低アレルゲン)","z/d(ウルトラ)","アミノプロテクトケア"],/*消化器*/["消化器サポート(低脂肪)","消化器サポート(高繊維)","消化器サポート(高栄養)","i/d(コンフォート)","i/d(ローファット)"],/*体重管理*/["満腹感サポート","満腹感サポート スペシャル","メタボリックス","w/d","ウェイト&ジョイントケア"],["糖コントロール","w/d"]]
     
     //猫
-    var catfoodlistArray:[[String]] = [/*腎臓*/["腎臓サポート","腎臓サポート セレクション","腎臓サポート スペシャル","ユリナリーS/O エイジング","腎臓ケア k/d ツナ チキン","キドニーケア"],/*膀胱･尿路*/["pHコントロール0","pHコントロール1","pHコントロール2","pHコントロール オルファクトリー","pHコントロール ライト","pHコントロール+満腹感サポート","pHコントロール+CLT","満腹感サポート+CLT"],/*皮膚*/["低分子プロテイン","セレクトプロテイン(ダック&ライス)","アミノペプチドフォーミュラ","z/d(低アレルゲン)"],/*消化器*/["消化器サポート","消化器サポート(可溶性繊維)","i/d"]]
+    var catfoodlistArray:[[String]] = [/*腎臓*/["腎臓サポート","腎臓サポート セレクション","腎臓サポート スペシャル","腎臓ケア k/d ツナ チキン","キドニーケア"],/*膀胱･尿路*/["pHコントロール0","pHコントロール1","pHコントロール2","pHコントロール オルファクトリー","pHコントロール ライト","pHコントロール+満腹感サポート","pHコントロール+CLT","満腹感サポート+CLT"],/*皮膚*/["低分子プロテイン","セレクトプロテイン(ダック&ライス)","アミノペプチドフォーミュラ","z/d(低アレルゲン)"],/*消化器*/["消化器サポート","消化器サポート(可溶性繊維)","i/d"],/*体重管理*/["満腹感サポート","減量サポート","メタボリックス","r/d","w/d","m/d"],["糖コントロール","m/d"]]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -289,7 +297,7 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         //背景色の関数
         labelBackground()
         //navigation barの設定
-        navigationBar()
+//        navigationBar()
         
         //ラベルの背景色
         //        chosenSpecie.backgroundColor = speciesBackground
