@@ -179,6 +179,12 @@ class petFoodViewController: UIViewController , UIPickerViewDelegate , UIPickerV
     
     @IBOutlet weak var leftLabel: UIView!
     
+    @IBAction func returnTop(_ sender: Any) {
+        let storyboard:UIStoryboard = self.storyboard!
+                let nextView = storyboard.instantiateViewController(withIdentifier: "viewController") as! titleViewController
+             self.present(nextView, animated: true, completion: nil)
+    }
+    
     @IBAction func foodReturnButton(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
         //        let storyboard:UIStoryboard = self.storyboard!
