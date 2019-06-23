@@ -71,6 +71,9 @@ class foodExplainViewController: UIViewController,UITableViewDelegate,UITableVie
         //as以降でtableViewCellを呼び出す
         let cell = foodListTableView.dequeueReusableCell(withIdentifier: "ListCell",for:indexPath) /*as! explainTableViewCell*/
         
+        //cellに複数行表示
+        cell.textLabel!.numberOfLines = 0;
+        
         //右端に矢印を出す
         cell.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
         
